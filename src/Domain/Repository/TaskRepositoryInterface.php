@@ -13,6 +13,8 @@
 
 namespace Todo\Domain\Repository;
 
+use Todo\Application\Task\Exception\TaskCannotBeRemovedException;
+use Todo\Application\Task\Exception\TaskCannotBeSavedException;
 use Todo\Domain\Exception\TaskNotFoundException;
 use Todo\Domain\Task;
 
@@ -68,26 +70,29 @@ interface TaskRepositoryInterface
      *
      * @param Task $task Task
      *
-     * @return bool
+     * @return void
+     * @throws TaskCannotBeSavedException
      */
-    public function save(Task $task): bool;
+    public function save(Task $task);
 
     /**
      * Remove
      *
      * @param Task $task Task
      *
-     * @return bool
+     * @return void
+     * @throws TaskCannotBeRemovedException
      */
-    public function remove(Task $task): bool;
+    public function remove(Task $task);
 
     /**
      * RemoveByStatus
      *
      * @param mixed $status Status
      *
-     * @return bool
+     * @return void
+     * @throws TaskCannotBeRemovedException
      */
-    public function removeByStatus($status) : bool;
+    public function removeByStatus($status);
 
 }

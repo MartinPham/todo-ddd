@@ -87,17 +87,17 @@ class CommandSpec extends ObjectBehavior
             ->willThrow(TaskNotFoundException::class);
 
         $this->taskRepository->remove($this->remainingTask)
-            ->willReturn(true);
+            ->willReturn(null);
 
         $this->taskRepository->save($this->newTask)
-            ->willReturn(true);
+            ->willReturn(null);
 
         $this->taskRepository->save($this->remainingTask)
-            ->willReturn(true);
+            ->willReturn(null);
         $this->taskRepository->save($this->completedTask)
-            ->willReturn(true);
+            ->willReturn(null);
         $this->taskRepository->removeByStatus(Task::STATUS_COMPLETED)
-            ->willReturn(true);
+            ->willReturn(null);
 
         $this->beConstructedWith($this->taskRepository);
     }

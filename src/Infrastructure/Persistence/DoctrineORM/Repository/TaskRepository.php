@@ -5,6 +5,8 @@ namespace Todo\Infrastructure\Persistence\DoctrineORM\Repository;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMInvalidArgumentException;
+use Todo\Application\Task\Exception\TaskCannotBeRemovedException;
+use Todo\Application\Task\Exception\TaskCannotBeSavedException;
 use Todo\Domain\Exception\TaskNotFoundException;
 use Todo\Domain\Repository\TaskRepositoryInterface;
 use Todo\Domain\Task;
@@ -87,13 +89,13 @@ class TaskRepository extends EntityRepository implements TaskRepositoryInterface
         try {
             $this->getEntityManager()->persist($task);
         } catch (ORMInvalidArgumentException $e) {
-            return false;
+            throw new TaskCannotBeSavedException($e->getMessage());
         }
 
         try {
             $this->getEntityManager()->flush();
         } catch (OptimisticLockException $e) {
-            return false;
+            throw new TaskCannotBeSavedException($e->getMessage());
         }
 
 
@@ -108,13 +110,13 @@ class TaskRepository extends EntityRepository implements TaskRepositoryInterface
         try {
             $this->getEntityManager()->remove($task);
         } catch (ORMInvalidArgumentException $e) {
-            return false;
+            throw new TaskCannotBeRemovedException($e->getMessage());
         }
 
         try {
             $this->getEntityManager()->flush();
         } catch (OptimisticLockException $e) {
-            return false;
+            throw new TaskCannotBeRemovedException($e->getMessage());
         }
 
         return true;

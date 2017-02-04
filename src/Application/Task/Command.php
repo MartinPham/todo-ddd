@@ -77,12 +77,10 @@ class Command
             throw $e;
         }
 
-        $result = $this->taskRepository->save($task);
-
-        if (!$result) {
-            throw new TaskCannotBeSavedException(
-                'Cannot save task into repository.'
-            );
+        try {
+            $this->taskRepository->save($task);
+        } catch (TaskCannotBeSavedException $e) {
+            throw $e;
         }
 
         return $task;
@@ -107,12 +105,10 @@ class Command
 
         $task->setStatus(Task::STATUS_COMPLETED);
 
-        $result = $this->taskRepository->save($task);
-
-        if (!$result) {
-            throw new TaskCannotBeSavedException(
-                'Cannot save task into repository.'
-            );
+        try {
+            $this->taskRepository->save($task);
+        } catch (TaskCannotBeSavedException $e) {
+            throw $e;
         }
 
         return $task;
@@ -137,12 +133,10 @@ class Command
 
         $task->setStatus(Task::STATUS_REMAINING);
 
-        $result = $this->taskRepository->save($task);
-
-        if (!$result) {
-            throw new TaskCannotBeSavedException(
-                'Cannot save task into repository.'
-            );
+        try {
+            $this->taskRepository->save($task);
+        } catch (TaskCannotBeSavedException $e) {
+            throw $e;
         }
 
         return $task;
@@ -185,12 +179,10 @@ class Command
             $task->setStatus($data['status']);
         }
 
-        $result = $this->taskRepository->save($task);
-
-        if (!$result) {
-            throw new TaskCannotBeSavedException(
-                'Cannot save task into repository.'
-            );
+        try {
+            $this->taskRepository->save($task);
+        } catch (TaskCannotBeSavedException $e) {
+            throw $e;
         }
 
         return $task;
@@ -214,12 +206,10 @@ class Command
             throw $e;
         }
 
-        $result = $this->taskRepository->remove($task);
-
-        if (!$result) {
-            throw new TaskCannotBeRemovedException(
-                'Cannot remove task(s) from repository.'
-            );
+        try {
+            $this->taskRepository->remove($task);
+        } catch (TaskCannotBeRemovedException $e) {
+            throw $e;
         }
     }
 
@@ -231,12 +221,10 @@ class Command
      */
     public function cleanAllCompletedTasks()
     {
-        $result = $this->taskRepository->removeByStatus(Task::STATUS_COMPLETED);
-
-        if (!$result) {
-            throw new TaskCannotBeRemovedException(
-                'Cannot remove task(s) from repository.'
-            );
+        try {
+            $this->taskRepository->removeByStatus(Task::STATUS_COMPLETED);
+        } catch (TaskCannotBeRemovedException $e) {
+            throw $e;
         }
     }
 }
