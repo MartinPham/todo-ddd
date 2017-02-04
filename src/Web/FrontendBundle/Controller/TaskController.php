@@ -61,7 +61,7 @@ class TaskController extends Controller
      * @Template()
      * @Method({"GET","POST"})
      *
-     * @return array
+     * @return mixed
      * @throws \LogicException
      */
     public function createAction(
@@ -120,7 +120,7 @@ class TaskController extends Controller
      * @Route("/{taskId}/updateStatus/{taskStatus}",name="task.updateStatus")
      * @Method({"GET"})
      *
-     * @return array
+     * @return mixed
      * @throws \Exception
      */
     public function updateStatusAction(
@@ -154,7 +154,7 @@ class TaskController extends Controller
      * @Method({"GET","POST"})
      * @Template()
      *
-     * @return array
+     * @return mixed
      */
     public function updateAction(
         FormFactoryInterface $formFactory,
@@ -235,7 +235,7 @@ class TaskController extends Controller
      * @Route("/{taskId}/delete",name="task.delete")
      * @Method({"GET"})
      *
-     * @return array
+     * @return mixed
      * @throws TaskNotFoundException
      * @throws TaskCannotBeRemovedException
      */
@@ -256,14 +256,21 @@ class TaskController extends Controller
     /**
      * CleanAction
      *
-     * @Route("/clean")
+     * @Route("/clean",name="task.clean")
      * @Method({"GET"})
      *
-     * @return array
+     * @return mixed
+     * @throws TaskCannotBeRemovedException
      */
-    public function cleanAction()
-    {
-        return [];
+    public function cleanAction(
+        Command $taskCommand
+    ) {
+        try {
+            $taskCommand->cleanAllCompletedTasks();
+        } catch (TaskCannotBeRemovedException $e) {
+            throw $e;
+        }
+        return $this->redirectToRoute('task.list');
     }
 
 }

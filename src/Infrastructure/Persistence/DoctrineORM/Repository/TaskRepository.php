@@ -126,7 +126,7 @@ class TaskRepository extends EntityRepository implements TaskRepositoryInterface
     public function removeByStatus($status): bool
     {
         $query = $this->getEntityManager()
-            ->createQuery('DELETE FROM Domain\Task t WHERE t.status = :status');
+            ->createQuery('DELETE FROM Todo\Domain\Task t WHERE t.status = :status');
         $query->setParameter('status', $status);
         $query->execute();
 
