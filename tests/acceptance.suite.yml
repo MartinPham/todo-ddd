@@ -1,6 +1,6 @@
 class_name: AcceptanceTester
 modules:
     enabled:
-        - PhpBrowser:
-            url: 'http://127.0.0.1' # put your local url
+#        - PhpBrowser:
+#            url: 'http://127.0.0.1' # put your local url
         - \Helper\Acceptance
