@@ -1,13 +1,13 @@
 <?php
 
-namespace spec\Application\Task;
+namespace spec\Todo\Application\Task;
 
-use Application\Task\Command;
-use Domain\Exception\TaskNameIsAlreadyExistedException;
-use Domain\Exception\TaskNameIsEmptyException;
-use Domain\Factory\TaskFactory;
-use Domain\Repository\TaskRepositoryInterface;
-use Domain\Task;
+use Todo\Application\Task\Command;
+use Todo\Domain\Exception\TaskNameIsAlreadyExistedException;
+use Todo\Domain\Exception\TaskNameIsEmptyException;
+use Todo\Domain\Factory\TaskFactory;
+use Todo\Domain\Repository\TaskRepositoryInterface;
+use Todo\Domain\Task;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 

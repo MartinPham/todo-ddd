@@ -1,8 +1,8 @@
 <?php
 
-namespace spec\Domain;
+namespace spec\Todo\Domain;
 
-use Domain\Task;
+use Todo\Domain\Task;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 

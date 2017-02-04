@@ -1,12 +1,12 @@
 <?php
 
-namespace spec\Domain\Specification;
+namespace spec\Todo\Domain\Specification;
 
-use Domain\Exception\TaskNotFoundException;
-use Domain\Factory\TaskFactory;
-use Domain\Repository\TaskRepositoryInterface;
-use Domain\Specification\TaskNameIsUniqueSpecification;
-use Domain\Task;
+use Todo\Domain\Exception\TaskNotFoundException;
+use Todo\Domain\Factory\TaskFactory;
+use Todo\Domain\Repository\TaskRepositoryInterface;
+use Todo\Domain\Specification\TaskNameIsUniqueSpecification;
+use Todo\Domain\Task;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 

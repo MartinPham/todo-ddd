@@ -1,8 +1,8 @@
 <?php
 
-namespace spec\Domain\Specification;
+namespace spec\Todo\Domain\Specification;
 
-use Domain\Specification\TaskNameIsNotEmptySpecification;
+use Todo\Domain\Specification\TaskNameIsNotEmptySpecification;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace spec\Application\Task;
+namespace spec\Todo\Application\Task;
 
-use Application\Task\Query;
-use Domain\Factory\TaskFactory;
-use Domain\Repository\TaskRepositoryInterface;
-use Domain\Task;
+use Todo\Application\Task\Query;
+use Todo\Domain\Factory\TaskFactory;
+use Todo\Domain\Repository\TaskRepositoryInterface;
+use Todo\Domain\Task;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
