@@ -76,6 +76,7 @@ class TaskListCommand extends ContainerAwareCommand
         try {
             parent::execute($input, $output);
         } catch (LogicException $e) {
+            // no catch
         }
 
         $output->writeln('Remaining');

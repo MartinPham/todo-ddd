@@ -105,7 +105,7 @@ class TaskController extends Controller
                 return $this->redirectToRoute('task.create');
             }
 
-            $formName = $session->getFlashBag()->set('form_name', null);
+            $session->getFlashBag()->set('form_name', null);
             return $this->redirectToRoute('task.list');
 
 

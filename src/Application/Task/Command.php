@@ -112,7 +112,7 @@ class Command
     /**
      * Redo Task
      *
-     * @param string $task Task ID
+     * @param string $taskId Task ID
      *
      * @return Task
      * @throws TaskNotFoundException
