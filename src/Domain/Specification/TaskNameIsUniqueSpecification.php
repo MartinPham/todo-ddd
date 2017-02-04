@@ -53,9 +53,7 @@ class TaskNameIsUniqueSpecification
         // but if this task's id === given id
         // then it's OK
 
+        /** @noinspection TypeUnsafeComparisonInspection */
         return $task->getId() == $id;
     }
-
-
-
 }

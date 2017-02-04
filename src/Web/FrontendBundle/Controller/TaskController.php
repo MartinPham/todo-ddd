@@ -89,6 +89,7 @@ class TaskController extends Controller
                     $errors[] = $e->getMessage();
                 }
 
+                /** @noinspection NotOptimalIfConditionsInspection */
                 if (count($errors) === 0) {
                     try {
                         $taskCommand->addNewTask($name);
@@ -96,6 +97,7 @@ class TaskController extends Controller
                         $errors[] = $e->getMessage();
                     }
 
+                    /** @noinspection NotOptimalIfConditionsInspection */
                     if (count($errors) === 0) {
                         return $this->redirectToRoute('task.list');
                     }
@@ -158,7 +160,7 @@ class TaskController extends Controller
         }
 
         return $this->redirectToRoute('task.list');
-    }
+    }/** @noinspection MoreThanThreeArgumentsInspection */
 
     /**
      * UpdateAction
@@ -211,6 +213,7 @@ class TaskController extends Controller
                     $errors[] = $e->getMessage();
                 }
 
+                /** @noinspection NotOptimalIfConditionsInspection */
                 if ($name !== null && $status !== null && count($errors) === 0) {
                     try {
                         $taskCommand->editTask(
@@ -226,6 +229,7 @@ class TaskController extends Controller
                     }
                 }
 
+                /** @noinspection NotOptimalIfConditionsInspection */
                 if (count($errors) === 0) {
                     return $this->redirectToRoute('task.list');
                 }
