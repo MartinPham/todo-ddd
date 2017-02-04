@@ -14,6 +14,7 @@
 !var/SymfonyRequirements.php
 /vendor/
 /web/bundles/
+/.idea
 
 tests/_output/*
 
