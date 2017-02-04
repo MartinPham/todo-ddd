@@ -26,7 +26,7 @@ class TaskController extends Controller
      * @param Query $taskQuery Task Query
      *
      * @Route("/list")
-     * @Method({"GET", "POST"})
+     * @Method({"GET"})
      *
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      */

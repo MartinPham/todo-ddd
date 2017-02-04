@@ -27,7 +27,7 @@ class TaskController extends Controller
      * @param Query $taskQuery Task Query
      *
      * @Route("/list")
-     * @Method({"GET", "POST"})
+     * @Method({"GET"})
      * @Template()
      *
      * @return array
@@ -45,7 +45,7 @@ class TaskController extends Controller
      * CreateAction
      *
      * @Route("/create")
-     * @Method({"GET", "POST"})
+     * @Method({"GET"})
      *
      * @return array
      */
@@ -58,7 +58,7 @@ class TaskController extends Controller
      * UpdateStatusAction
      *
      * @Route("/updateStatus")
-     * @Method({"GET", "POST"})
+     * @Method({"GET"})
      *
      * @return array
      */
@@ -71,7 +71,7 @@ class TaskController extends Controller
      * UpdateAction
      *
      * @Route("/update")
-     * @Method({"GET", "POST"})
+     * @Method({"GET"})
      *
      * @return array
      */
@@ -84,7 +84,7 @@ class TaskController extends Controller
      * DeleteAction
      *
      * @Route("/delete")
-     * @Method({"GET", "POST"})
+     * @Method({"GET"})
      *
      * @return array
      */
@@ -97,7 +97,7 @@ class TaskController extends Controller
      * CleanAction
      *
      * @Route("/clean")
-     * @Method({"GET", "POST"})
+     * @Method({"GET"})
      *
      * @return array
      */

@@ -20,7 +20,7 @@ class DefaultController extends Controller
 {
     /**
      * @Route("/")
-     * @Method({"GET", "POST"})
+     * @Method({"GET"})
      * @Template()
      */
     public function indexAction()
