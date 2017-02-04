@@ -1,7 +1,6 @@
 class_name: AcceptanceTester
 modules:
-#    enabled:
-#        - WebDriver:
-#            url: 'http://todo.local/' # put your local url
-#            browser: php
-#        - \Helper\Acceptance
+    enabled:
+        - PhpBrowser:
+            url: 'http://localhost' # put your local url
+        - \Helper\Acceptance
