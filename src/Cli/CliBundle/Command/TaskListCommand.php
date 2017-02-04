@@ -2,6 +2,7 @@
 
 namespace Todo\Cli\CliBundle\Command;
 
+use Symfony\Component\Console\Exception\InvalidArgumentException;
 use Todo\Application\Task\Query;
 use Todo\Domain\Task;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
@@ -13,7 +14,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  * Class TaskListCommand
  *
  * @category None
- * @package  Cli\CliBundle\Command
+ * @package  Todo\Cli\CliBundle\Command
  * @author   Martin Pham <i@martinpham.com>
  * @license  None http://
  * @link     None
@@ -52,9 +53,13 @@ class TaskListCommand extends ContainerAwareCommand
      */
     protected function configure()
     {
-        $this
-            ->setName('task:list')
-            ->setDescription('...');
+        try {
+            $this
+                ->setName('task:list')
+                ->setDescription('...');
+        } catch (InvalidArgumentException $e) {
+            // no catch exception
+        }
     }
 
     /**
@@ -71,8 +76,6 @@ class TaskListCommand extends ContainerAwareCommand
         try {
             parent::execute($input, $output);
         } catch (LogicException $e) {
-            throw $e;
-
         }
 
         $output->writeln('Remaining');
@@ -81,7 +84,7 @@ class TaskListCommand extends ContainerAwareCommand
 
         /** @var Task $task */
         foreach ($remainingTasks as $task) {
-            $output->writeln(' - ' . $task->getName());
+            $output->writeln(' - ' . $task->getName() . '');
         }
 
         $output->writeln('');
@@ -90,7 +93,6 @@ class TaskListCommand extends ContainerAwareCommand
 
         $completedTasks = $this->taskQuery->getAllCompletedTasks();
 
-        /** @var Task $task */
         foreach ($completedTasks as $task) {
             $output->writeln(' - ' . $task->getName());
         }

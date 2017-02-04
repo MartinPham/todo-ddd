@@ -4,12 +4,12 @@ Feature: CreatingTask
   I can create new task with name
 
   Scenario: Create new task
-    Given There is no task named "Buying sugar"
-    When I create a new task named "Buying sugar"
-    Then The task "Buying sugar" should be created
-    And The status of task "Buying sugar" should be "remaing"
+    Given There is no task named "buying sugar"
+    When I create a new task named "buying sugar"
+    Then The task "buying sugar" should be created
+    And The status of task "buying sugar" should be "remaining"
 
   Scenario: Create new task with existed name
-    Given There is a task named "Buying sugar"
-    When I create a new task named "Buying sugar"
-    Then The new task "Buying sugar" should not be created
+    Given There is a task named "buying sugar"
+    When I create a new task named "buying sugar"
+    Then The new task "buying sugar" should not be created

@@ -11,7 +11,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
  * Class DefaultController
  *
  * @category None
- * @package  Web\FrontendBundle\Controller
+ * @package  Todo\Web\FrontendBundle\Controller
  * @author   Martin Pham <i@martinpham.com>
  * @license  None http://
  * @link     None

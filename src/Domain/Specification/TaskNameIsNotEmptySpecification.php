@@ -6,7 +6,7 @@ namespace Todo\Domain\Specification;
  * Class TaskNameIsNotEmptySpecification
  *
  * @category None
- * @package  Domain\Specification
+ * @package  Todo\Domain\Specification
  * @author   Martin Pham <i@martinpham.com>
  * @license  None http://
  * @link     None

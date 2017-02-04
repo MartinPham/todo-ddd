@@ -13,7 +13,7 @@ use Todo\Domain\Task;
  * Class TaskFactory
  *
  * @category None
- * @package  Domain\Factory
+ * @package  Todo\Domain\Factory
  * @author   Martin Pham <i@martinpham.com>
  * @license  None http://
  * @link     None

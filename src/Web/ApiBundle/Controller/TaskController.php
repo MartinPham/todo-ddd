@@ -11,7 +11,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
  * Class TaskController
  *
  * @category None
- * @package  Web\ApiBundle\Controller
+ * @package  Todo\Web\ApiBundle\Controller
  * @author   Martin Pham <i@martinpham.com>
  * @license  None http://
  * @link     None

@@ -2,5 +2,5 @@ class_name: AcceptanceTester
 modules:
     enabled:
         - PhpBrowser:
-            url: 'http://localhost' # put your local url
+            url: 'http://sftodo.local/app_dev.php' # put your local url
         - \Helper\Acceptance

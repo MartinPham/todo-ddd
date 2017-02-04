@@ -12,6 +12,10 @@ services:
         class: Todo\Application\Task\Query
         autowire: true
 
+    task.command:
+        class: Todo\Application\Task\Command
+        autowire: true
+
     repository.task_repository:
         class: Todo\Infrastructure\Persistence\DoctrineORM\Repository\TaskRepository
         factory: ['@doctrine.orm.default_entity_manager', getRepository]

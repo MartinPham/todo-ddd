@@ -9,7 +9,7 @@ use Todo\Domain\Repository\TaskRepositoryInterface;
  * Class TaskNameIsUniqueSpecification
  *
  * @category None
- * @package  Domain\Specification
+ * @package  Todo\Domain\Specification
  * @author   Martin Pham <i@martinpham.com>
  * @license  None http://
  * @link     None

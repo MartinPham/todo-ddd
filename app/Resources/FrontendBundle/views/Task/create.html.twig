@@ -1,7 +1,15 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}FrontendBundle:Task:create{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Task:create page</h1>
+    <ul>
+    {% for message in app.session.flashBag.get('error') %}
+        <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+
+    {{ form(create_task_form) }}
+
+    <a href="{{ path('task.list') }}">List</a>
 {% endblock %}
+

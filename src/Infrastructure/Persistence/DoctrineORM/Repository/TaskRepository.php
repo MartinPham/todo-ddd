@@ -13,7 +13,7 @@ use Todo\Domain\Task;
  * Class TaskRepository
  *
  * @category None
- * @package  Infrastructure\Persistence\DoctrineORM\Repository
+ * @package  Todo\Infrastructure\Persistence\DoctrineORM\Repository
  * @author   Martin Pham <i@martinpham.com>
  * @license  None http://
  * @link     None
@@ -79,6 +79,11 @@ class TaskRepository extends EntityRepository implements TaskRepositoryInterface
      */
     public function save(Task $task): bool
     {
+        if ($task->getCreatedAt() === null) {
+            $task->setCreatedAt(new \DateTime());
+        }
+        $task->setUpdatedAt(new \DateTime());
+
         try {
             $this->getEntityManager()->persist($task);
         } catch (ORMInvalidArgumentException $e) {
@@ -90,6 +95,7 @@ class TaskRepository extends EntityRepository implements TaskRepositoryInterface
         } catch (OptimisticLockException $e) {
             return false;
         }
+
 
         return true;
     }

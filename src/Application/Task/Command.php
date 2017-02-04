@@ -14,7 +14,7 @@ use Todo\Domain\Task;
  * Class Command
  *
  * @category None
- * @package  Application\Task
+ * @package  Todo\Application\Task
  * @author   Martin Pham <i@martinpham.com>
  * @license  None http://
  * @link     None
@@ -82,13 +82,20 @@ class Command
     /**
      * Complete Task
      *
-     * @param Task $task Task
+     * @param string $taskId Task ID
      *
      * @return Task
+     * @throws TaskNotFoundException
      * @throws TaskCannotBeSavedException
      */
-    public function completeTask(Task $task) : Task
+    public function completeTask($taskId) : Task
     {
+        try {
+            $task = $this->taskRepository->find($taskId);
+        } catch (TaskNotFoundException $e) {
+            throw $e;
+        }
+
         $task->setStatus(Task::STATUS_COMPLETED);
 
         $result = $this->taskRepository->save($task);
@@ -105,13 +112,20 @@ class Command
     /**
      * Redo Task
      *
-     * @param Task $task Task
+     * @param string $task Task ID
      *
      * @return Task
+     * @throws TaskNotFoundException
      * @throws TaskCannotBeSavedException
      */
-    public function redoTask(Task $task) : Task
+    public function redoTask(string $taskId) : Task
     {
+        try {
+            $task = $this->taskRepository->find($taskId);
+        } catch (TaskNotFoundException $e) {
+            throw $e;
+        }
+
         $task->setStatus(Task::STATUS_REMAINING);
 
         $result = $this->taskRepository->save($task);

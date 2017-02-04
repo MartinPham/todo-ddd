@@ -6,7 +6,7 @@ namespace Todo\Domain;
  * Class Task
  *
  * @category None
- * @package  Domain\Model
+ * @package  Todo\Domain
  * @author   Martin Pham <i@martinpham.com>
  * @license  None http://
  * @link     None

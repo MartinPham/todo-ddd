@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Symfony" pattern="file[todo]:src//*" />
+</component>

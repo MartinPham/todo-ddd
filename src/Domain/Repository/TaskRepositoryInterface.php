@@ -20,7 +20,7 @@ use Todo\Domain\Task;
  * Interface TaskRepositoryInterface
  *
  * @category None
- * @package  Domain\Repository
+ * @package  Todo\Domain\Repository
  * @author   Martin Pham <i@martinpham.com>
  * @license  None http://
  * @link     None

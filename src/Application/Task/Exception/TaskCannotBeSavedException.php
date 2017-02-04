@@ -17,7 +17,7 @@ namespace Todo\Application\Task\Exception;
  * Class TaskCannotBeSavedException
  *
  * @category None
- * @package  Application\Task\Exception
+ * @package  Todo\Application\Task\Exception
  * @author   Martin Pham <i@martinpham.com>
  * @license  None http://
  * @link     None

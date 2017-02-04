@@ -9,7 +9,7 @@ use Todo\Domain\Task;
  * Class Query
  *
  * @category None
- * @package  Application\Task
+ * @package  Todo\Application\Task
  * @author   Martin Pham <i@martinpham.com>
  * @license  None http://
  * @link     None

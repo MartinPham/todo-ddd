@@ -28,7 +28,8 @@ class AcceptanceTester extends \Codeception\Actor
      */
     public function thereIsNoTaskNamed($arg1)
     {
-        throw new \Codeception\Exception\Incomplete("Step `There is no task named :arg1` is not defined");
+        $this->amOnPage('/task/list');
+        $this->cantSee($arg1);
     }
 
     /**
@@ -36,7 +37,9 @@ class AcceptanceTester extends \Codeception\Actor
      */
     public function iCreateANewTaskNamed($arg1)
     {
-        throw new \Codeception\Exception\Incomplete("Step `I create a new task named :arg1` is not defined");
+        $this->amOnPage('/task/create');
+        $this->fillField('create_task_form[name]', $arg1);
+        $this->click('create_task_form[submit]');
     }
 
     /**
@@ -44,7 +47,8 @@ class AcceptanceTester extends \Codeception\Actor
      */
     public function theTaskShouldBeCreated($arg1)
     {
-        throw new \Codeception\Exception\Incomplete("Step `The task :arg1 should be created` is not defined");
+        $this->amOnPage('/task/list');
+        $this->see($arg1);
     }
 
     /**
@@ -52,7 +56,8 @@ class AcceptanceTester extends \Codeception\Actor
      */
     public function theStatusOfTaskShouldBe($arg1, $arg2)
     {
-        throw new \Codeception\Exception\Incomplete("Step `The status of task :arg1 should be :arg2` is not defined");
+        $this->amOnPage('/task/list');
+        $this->see($arg1 . ' (' . $arg2 . ')');
     }
 
     /**
@@ -60,7 +65,8 @@ class AcceptanceTester extends \Codeception\Actor
      */
     public function thereIsATaskNamed($arg1)
     {
-        throw new \Codeception\Exception\Incomplete("Step `There is a task named :arg1` is not defined");
+        $this->amOnPage('/task/list');
+        $this->see($arg1);
     }
 
     /**
@@ -68,7 +74,7 @@ class AcceptanceTester extends \Codeception\Actor
      */
     public function theNewTaskShouldNotBeCreated($arg1)
     {
-        throw new \Codeception\Exception\Incomplete("Step `The new task :arg1 should not be created` is not defined");
+        $this->see($arg1 . " is already existed");
     }
 
 }

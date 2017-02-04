@@ -17,7 +17,7 @@ namespace Todo\Domain\Exception;
  * Class TaskNameIsEmptyException
  *
  * @category None
- * @package  Domain\Exception
+ * @package  Todo\Domain\Exception
  * @author   Martin Pham <i@martinpham.com>
  * @license  None http://
  * @link     None
