@@ -1,0 +1,18 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+
+    <h2>Remaining</h2>
+    <ul>
+    {% for task in remaining_tasks %}
+        <li>{{ task.name }}</li>
+    {% endfor %}
+    </ul>
+
+    <h2>Completed</h2>
+    <ul>
+    {% for task in completed_tasks %}
+        <li>{{ task.name }}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}

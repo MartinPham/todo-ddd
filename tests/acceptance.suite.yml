@@ -1,0 +1,7 @@
+class_name: AcceptanceTester
+modules:
+    enabled:
+        - WebDriver:
+            url: 'http://todo.local/' # put your local url
+            browser: phantomjs
+        - \Helper\Acceptance

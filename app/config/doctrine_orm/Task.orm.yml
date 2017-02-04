@@ -1,0 +1,45 @@
+Domain\Task:
+    repositoryClass: Infrastructure\Persistence\DoctrineORM\Repository\TaskRepository
+
+    type: entity
+    table: tasks
+
+    indexes:
+        status:
+            columns: [ status ]
+
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        status:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        createdAt:
+            type: datetime
+            nullable: false
+            options:
+                default: CURRENT_TIMESTAMP
+            column: created_at
+        updatedAt:
+            type: datetime
+            nullable: false
+            options:
+                default: CURRENT_TIMESTAMP
+            column: updated_at
+    lifecycleCallbacks: {  }
