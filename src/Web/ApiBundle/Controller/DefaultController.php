@@ -18,6 +18,7 @@ class DefaultController extends Controller
 {
     /**
      * @Route("/")
+     * @Method({"GET", "POST"})
      */
     public function indexAction()
     {

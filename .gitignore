@@ -15,7 +15,7 @@
 /vendor/
 /web/bundles/
 
-/.idea/*
+
 
 tests/_output/*
 
