@@ -152,13 +152,12 @@ Feature: Removing task
 				- > save
 				- > remove
 
-###Web
-- Frontend
-	- DefaultController
-	- TaskController
-		- > listAction
-		- > createAction
-		- > updateStatusAction
-		- > updateAction
-		- > deleteAction 
-		- > cleanAction
+	- Eloquent
+		- Repository
+			- TaskRepository
+				- > findAll
+	 			- > find
+	 			- > findAllByStatus
+				- > save
+				- > remove
+
