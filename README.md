@@ -1,6 +1,8 @@
 todo
 ====
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/0e23630d-1f08-495d-b8f5-d039e76b8bf8/big.png)](https://insight.sensiolabs.com/projects/0e23630d-1f08-495d-b8f5-d039e76b8bf8)
+
 ###Description
 todo is an application which allow people can add new task, see all the tasks added, modify existing tasks, mark tasks done/remaing, or remove tasks. Every task has name and status (completed/not-completed). Task should be unique.
 
