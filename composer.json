@@ -1,5 +1,6 @@
 {
     "name": "zzz/todo",
+    "description" : "Todo DDD app",
     "license": "proprietary",
     "type": "project",
     "autoload": {
@@ -29,9 +30,9 @@
         "sensio/framework-extra-bundle": "^3.0.2",
         "incenteev/composer-parameter-handler": "^2.0",
 
-        "codeception/codeception": "dev-master",
-        "symplify/action-autowire": "dev-master",
-        "phpspec/phpspec": "dev-master"
+        "codeception/codeception": "2.2.*",
+        "symplify/action-autowire": "1.3.*",
+        "phpspec/phpspec": "3.2.*"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
