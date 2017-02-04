@@ -11,6 +11,8 @@
     {% for task in remaining_tasks %}
         <li>
             {{ task.name }} ({{ task.status }})
+            <a href="{{ path('task.update', { taskId: task.id }) }}">[Edit]</a>
+            |
             <a href="{{ path('task.updateStatus', { taskId: task.id, taskStatus: constant('Todo\\Domain\\Task::STATUS_COMPLETED') }) }}">[Done]</a>
             |
             <a href="{{ path('task.delete', { taskId: task.id }) }}">[X]</a>
@@ -20,6 +22,8 @@
     {% for task in completed_tasks %}
         <li>
             {{ task.name }} ({{ task.status }})
+            <a href="{{ path('task.update', { taskId: task.id }) }}">[Edit]</a>
+            |
             <a href="{{ path('task.updateStatus', { taskId: task.id, taskStatus: constant('Todo\\Domain\\Task::STATUS_REMAINING') }) }}">[Redo]</a>
             |
             <a href="{{ path('task.delete', { taskId: task.id }) }}">[X]</a>

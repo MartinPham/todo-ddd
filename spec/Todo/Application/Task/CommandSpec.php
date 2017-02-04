@@ -5,6 +5,7 @@ namespace spec\Todo\Application\Task;
 use Todo\Application\Task\Command;
 use Todo\Domain\Exception\TaskNameIsAlreadyExistedException;
 use Todo\Domain\Exception\TaskNameIsEmptyException;
+use Todo\Domain\Exception\TaskNotFoundException;
 use Todo\Domain\Factory\TaskFactory;
 use Todo\Domain\Repository\TaskRepositoryInterface;
 use Todo\Domain\Task;
@@ -80,6 +81,10 @@ class CommandSpec extends ObjectBehavior
             ->willReturn($this->remainingTask);
         $this->taskRepository->find($this->completedTask->getId())
             ->willReturn($this->completedTask);
+        $this->taskRepository->findByName($this->completedTask->getName())
+            ->willReturn($this->completedTask);
+        $this->taskRepository->findByName('')
+            ->willThrow(TaskNotFoundException::class);
 
         $this->taskRepository->remove($this->remainingTask)
             ->willReturn(true);
@@ -132,6 +137,9 @@ class CommandSpec extends ObjectBehavior
 
     function it_can_edit_task()
     {
+        $this->taskRepository->findByName('New name')
+            ->willThrow(TaskNotFoundException::class);
+
         $task = $this->editTask(
             $this->remainingTask->getId(),
             [
@@ -142,6 +150,33 @@ class CommandSpec extends ObjectBehavior
 
         $task->getName()->shouldBe('New name');
         $task->getStatus()->shouldBe(Task::STATUS_COMPLETED);
+
+
+        $task = $this->editTask(
+            $this->remainingTask->getId(),
+            [
+                'name' => $this->remainingTask->getName(),
+                'status' => Task::STATUS_COMPLETED
+            ]
+        );
+
+        $task->getName()->shouldBe($this->remainingTask->getName());
+        $task->getStatus()->shouldBe(Task::STATUS_COMPLETED);
+
+        $this->shouldThrow(TaskNameIsAlreadyExistedException::class)
+            ->duringEditTask(
+                $this->remainingTask->getId(),
+                [
+                    'name' => 'Buying milk',
+                ]
+            );
+        $this->shouldThrow(TaskNameIsEmptyException::class)
+            ->duringEditTask(
+                $this->remainingTask->getId(),
+                [
+                    'name' => '',
+                ]
+            );
     }
 
 

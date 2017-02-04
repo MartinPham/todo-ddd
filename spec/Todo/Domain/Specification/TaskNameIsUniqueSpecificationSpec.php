@@ -26,6 +26,7 @@ class TaskNameIsUniqueSpecificationSpec extends ObjectBehavior
     function let(TaskRepositoryInterface $taskRepository)
     {
         $this->task = new Task;
+        $this->task->setId(1);
         $this->task->setName($this->taskNameExists);
 
         $this->taskRepository = $taskRepository;
@@ -43,5 +44,7 @@ class TaskNameIsUniqueSpecificationSpec extends ObjectBehavior
     {
         $this->isSatisfiedBy($this->taskNameExists)->shouldBe(false);
         $this->isSatisfiedBy($this->taskNameNonExists)->shouldBe(true);
+
+        $this->isSatisfiedBy($this->taskNameExists, 1)->shouldBe(true);
     }
 }

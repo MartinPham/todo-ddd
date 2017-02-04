@@ -29,6 +29,7 @@ class TaskFactorySpec extends ObjectBehavior
         $this->taskRepository = $taskRepository;
 
         $taskExists = new Task();
+        $taskExists->setId(1);
         $taskExists->setName($this->nameExists);
         $this->taskRepository->findByName($this->nameExists)
             ->willReturn($taskExists);

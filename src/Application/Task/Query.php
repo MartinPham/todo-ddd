@@ -2,6 +2,7 @@
 
 namespace Todo\Application\Task;
 
+use Todo\Domain\Exception\TaskNotFoundException;
 use Todo\Domain\Repository\TaskRepositoryInterface;
 use Todo\Domain\Task;
 
@@ -53,5 +54,22 @@ class Query
         return $this->taskRepository->findAllByStatus(Task::STATUS_COMPLETED);
     }
 
+    /**
+     * Get Task By Id
+     *
+     * @param string $taskId Task ID
+     *
+     * @return Task
+     * @throws TaskNotFoundException
+     */
+    public function getTaskById($taskId) : Task
+    {
+        try {
+            $task = $this->taskRepository->find($taskId);
+        } catch (TaskNotFoundException $e) {
+            throw $e;
+        }
 
+        return $task;
+    }
 }

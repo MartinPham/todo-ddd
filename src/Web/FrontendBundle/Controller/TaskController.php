@@ -19,6 +19,7 @@ use Todo\Domain\Exception\TaskNameIsEmptyException;
 use Todo\Domain\Exception\TaskNotFoundException;
 use Todo\Domain\Task;
 use Todo\Web\FrontendBundle\Form\CreateTaskForm;
+use Todo\Web\FrontendBundle\Form\UpdateTaskForm;
 
 /**
  * Class TaskController
@@ -177,14 +178,125 @@ class TaskController extends Controller
     /**
      * UpdateAction
      *
-     * @Route("/update")
-     * @Method({"GET"})
+     * @Route("/{taskId}/update",name="task.update")
+     * @Method({"GET","POST"})
+     * @Template()
      *
      * @return array
+     * @throws \LogicException
      */
-    public function updateAction()
-    {
-        return [];
+    public function updateAction(
+        FormFactoryInterface $formFactory,
+        Request $request,
+        Session $session,
+        Query $taskQuery,
+        Command $taskCommand,
+        $taskId
+    ) {
+        try {
+            $task = $taskQuery->getTaskById($taskId);
+        } catch (TaskNotFoundException $e) {
+            try {
+                $this->addFlash('error', $e->getMessage());
+            } catch (\LogicException $e) {
+                throw $e;
+            }
+            return $this->redirectToRoute('task.update', [ 'taskId' => $taskId ]);
+        }
+
+
+        try {
+            $updateTaskForm = $formFactory->create(
+                UpdateTaskForm::class,
+                $task
+            );
+        } catch (InvalidOptionsException $e) {
+            try {
+                $this->addFlash('error', $e->getMessage());
+            } catch (\LogicException $e) {
+                throw $e;
+            }
+            return $this->redirectToRoute('task.update', [ 'taskId' => $taskId ]);
+        }
+
+        $updateTaskForm->handleRequest($request);
+        if ($updateTaskForm->isSubmitted() && $updateTaskForm->isValid()) {
+            try {
+                /** @var Task $task */
+                $task = $updateTaskForm->getData();
+
+                $name = $task->getName();
+                $status = $task->getStatus();
+
+                $this->addFlash('form_name', $name);
+                $this->addFlash('form_status', $status);
+
+            } catch (\OutOfBoundsException $e) {
+                try {
+                    $this->addFlash('error', $e->getMessage());
+                } catch (\LogicException $e) {
+                    throw $e;
+                }
+                return $this->redirectToRoute('task.update', [ 'taskId' => $taskId ]);
+            } catch (\LogicException $e) {
+                throw $e;
+            }
+
+            try {
+                $taskCommand->editTask(
+                    $taskId,
+                    [
+                        'name' => $name,
+                        'status' => $status,
+                    ]
+                );
+            } catch (TaskNotFoundException | TaskNameIsEmptyException | TaskNameIsAlreadyExistedException | TaskCannotBeSavedException $e) {
+                try {
+                    $this->addFlash('error', $e->getMessage());
+                } catch (\LogicException $e) {
+                    throw $e;
+                }
+                return $this->redirectToRoute('task.update', [ 'taskId' => $taskId ]);
+            }
+
+            $session->getFlashBag()->set('form_name', null);
+            $session->getFlashBag()->set('form_status', null);
+
+            return $this->redirectToRoute('task.list');
+
+
+        }
+
+        if (count($formName = $session->getFlashBag()->get('form_name')) > 0) {
+            try {
+                $updateTaskForm->get('name')->setData($formName[0]);
+            } catch (\OutOfBoundsException $e) {
+                try {
+                    $this->addFlash('error', $e->getMessage());
+                } catch (\LogicException $e) {
+                    throw $e;
+                }
+                return $this->redirectToRoute('task.update', [ 'taskId' => $taskId ]);
+            }
+        }
+
+        if (count($formStatus = $session->getFlashBag()->get('form_status')) > 0) {
+            try {
+                $updateTaskForm->get('status')->setData($formStatus[0]);
+            } catch (\OutOfBoundsException $e) {
+                try {
+                    $this->addFlash('error', $e->getMessage());
+                } catch (\LogicException $e) {
+                    throw $e;
+                }
+                return $this->redirectToRoute('task.update', [ 'taskId' => $taskId ]);
+            }
+        }
+
+
+        return [
+            'update_task_form' => $updateTaskForm->createView()
+        ];
     }
 
     /**

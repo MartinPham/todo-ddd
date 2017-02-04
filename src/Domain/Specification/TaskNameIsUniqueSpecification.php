@@ -37,19 +37,23 @@ class TaskNameIsUniqueSpecification
      * Is Satisfied By
      *
      * @param string $name Name
+     * @param mixed $id ID
      *
      * @return bool
      */
-    public function isSatisfiedBy(string $name)
+    public function isSatisfiedBy(string $name, $id = null)
     {
         try {
-            $this->taskRepository->findByName($name);
+            $task = $this->taskRepository->findByName($name);
         } catch (TaskNotFoundException $e) {
             return true;
         }
 
-        return false;
+        // there is task with same name
+        // but if this task's id === given id
+        // then it's OK
 
+        return $task->getId() == $id;
     }
 
 

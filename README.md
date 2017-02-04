@@ -130,6 +130,7 @@ Feature: Removing task
 		- TaskCannotBeSavedException  
 		- TaskCannotBeRemovedException  
 	- Query
+	    - > getTaskById
 		- > getAllRemainingTasks
 		- > getAllCompletedTasks
 	- Command

@@ -8,6 +8,8 @@ use Todo\Domain\Exception\TaskNameIsEmptyException;
 use Todo\Domain\Exception\TaskNotFoundException;
 use Todo\Domain\Factory\TaskFactory;
 use Todo\Domain\Repository\TaskRepositoryInterface;
+use Todo\Domain\Specification\TaskNameIsNotEmptySpecification;
+use Todo\Domain\Specification\TaskNameIsUniqueSpecification;
 use Todo\Domain\Task;
 
 /**
@@ -148,6 +150,8 @@ class Command
      * @return Task
      * @throws TaskCannotBeSavedException
      * @throws TaskNotFoundException
+     * @throws TaskNameIsAlreadyExistedException
+     * @throws TaskNameIsEmptyException
      */
     public function editTask(string $taskId, array $data) : Task
     {
@@ -157,8 +161,30 @@ class Command
             throw $e;
         }
 
-        $task->setName($data['name']);
-        $task->setStatus($data['status']);
+        if (isset($data['name'])) {
+            $emptyNameValidator = new TaskNameIsNotEmptySpecification();
+            if (!$emptyNameValidator->isSatisfiedBy($data['name'])) {
+                throw new TaskNameIsEmptyException("Task's name should not be empty.");
+            }
+
+            $uniqueNameValidator = new TaskNameIsUniqueSpecification(
+                $this->taskRepository
+            );
+            if (!$uniqueNameValidator->isSatisfiedBy($data['name'], $taskId)) {
+                throw new TaskNameIsAlreadyExistedException(
+                    "Task's name {$data['name']} is already existed"
+                );
+            }
+
+
+            $task->setName($data['name']);
+        }
+
+
+
+        if (isset($data['status'])) {
+            $task->setStatus($data['status']);
+        }
 
         $result = $this->taskRepository->save($task);
 

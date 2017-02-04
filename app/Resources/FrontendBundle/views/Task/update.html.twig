@@ -1,7 +1,11 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}FrontendBundle:Task:update{% endblock %}
-
 {% block body %}
-<h1>Welcome to the Task:update page</h1>
+    <ul>
+        {% for message in app.session.flashBag.get('error') %}
+            <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+
+    {{ form(update_task_form) }}
 {% endblock %}

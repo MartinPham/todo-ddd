@@ -49,6 +49,9 @@ class QuerySpec extends ObjectBehavior
             ->findAllByStatus(Task::STATUS_REMAINING)
             ->willReturn($this->remainingTasks);
         $this->taskRepository
+            ->find(1)
+            ->willReturn($this->remainingTasks[0]);
+        $this->taskRepository
             ->findAllByStatus(Task::STATUS_COMPLETED)
             ->willReturn($this->completedTasks);
 
@@ -65,5 +68,9 @@ class QuerySpec extends ObjectBehavior
     {
         $this->getAllCompletedTasks()
             ->shouldBe($this->completedTasks);
+    }
+    function it_can_get_task_by_id()
+    {
+        $this->getTaskById(1)->shouldReturn($this->remainingTasks[0]);
     }
 }
