@@ -23,6 +23,16 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="composer.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/composer.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="19" column="21" lean-forward="false" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="TaskListCommand.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Cli/CliBundle/Command/TaskListCommand.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -35,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Command.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Command.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Application/Task/Command.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-3276">
-              <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+              <caret line="18" column="25" lean-forward="false" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
               <folding>
                 <element signature="e#35#95#0#PHP" expanded="true" />
               </folding>
@@ -101,16 +111,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Task.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Domain/Task.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="128" column="11" lean-forward="false" selection-start-line="128" selection-start-column="11" selection-end-line="128" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="TaskController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Web/FrontendBundle/Controller/TaskController.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -147,7 +147,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/features/CreatingTask.feature" />
         <option value="$PROJECT_DIR$/tests/acceptance.suite.yml" />
@@ -191,6 +190,7 @@
         <option value="$PROJECT_DIR$/src/Web/ApiBundle/ApiBundle.php" />
         <option value="$PROJECT_DIR$/src/Domain/Specification/TaskNameIsUniqueSpecification.php" />
         <option value="$PROJECT_DIR$/src/Cli/CliBundle/Command/TaskListCommand.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
       </list>
     </option>
   </component>
@@ -967,14 +967,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="32" column="33" lean-forward="false" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/services.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
@@ -1074,10 +1066,18 @@
     <entry file="file://$PROJECT_DIR$/src/Application/Task/Command.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3276">
-          <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+          <caret line="18" column="25" lean-forward="false" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
           <folding>
             <element signature="e#35#95#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="21" lean-forward="false" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
