@@ -55,7 +55,7 @@ class CommandSpec extends ObjectBehavior
         $this->remainingTask->setStatus(Task::STATUS_REMAINING);
 
         $this->completedTask = $this->generate_task('Buying milk');
-        $this->remainingTask->setId(2);
+        $this->completedTask->setId(2);
         $this->completedTask->setStatus(Task::STATUS_COMPLETED);
 
         $this->tasks = [
@@ -78,6 +78,8 @@ class CommandSpec extends ObjectBehavior
 
         $this->taskRepository->find($this->remainingTask->getId())
             ->willReturn($this->remainingTask);
+        $this->taskRepository->find($this->completedTask->getId())
+            ->willReturn($this->completedTask);
 
         $this->taskRepository->remove($this->remainingTask)
             ->willReturn(true);
@@ -116,14 +118,14 @@ class CommandSpec extends ObjectBehavior
 
     function it_can_complete_task()
     {
-        $task = $this->completeTask($this->remainingTask);
+        $task = $this->completeTask($this->remainingTask->getId());
 
         $task->getStatus()->shouldBe(Task::STATUS_COMPLETED);
     }
 
     function it_can_redo_task()
     {
-        $task = $this->redoTask($this->completedTask);
+        $task = $this->redoTask($this->completedTask->getId());
 
         $task->getStatus()->shouldBe(Task::STATUS_REMAINING);
     }
