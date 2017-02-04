@@ -1,5 +1,5 @@
-Domain\Task:
-    repositoryClass: Infrastructure\Persistence\DoctrineORM\Repository\TaskRepository
+Todo\Domain\Task:
+    repositoryClass: Todo\Infrastructure\Persistence\DoctrineORM\Repository\TaskRepository
 
     type: entity
     table: tasks

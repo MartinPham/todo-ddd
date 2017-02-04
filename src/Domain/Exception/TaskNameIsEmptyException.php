@@ -11,7 +11,7 @@
  * @link     None
  */
 
-namespace Domain\Exception;
+namespace Todo\Domain\Exception;
 
 /**
  * Class TaskNameIsEmptyException

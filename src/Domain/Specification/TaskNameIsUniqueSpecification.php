@@ -1,9 +1,9 @@
 <?php
 
-namespace Domain\Specification;
+namespace Todo\Domain\Specification;
 
-use Domain\Exception\TaskNotFoundException;
-use Domain\Repository\TaskRepositoryInterface;
+use Todo\Domain\Exception\TaskNotFoundException;
+use Todo\Domain\Repository\TaskRepositoryInterface;
 
 /**
  * Class TaskNameIsUniqueSpecification

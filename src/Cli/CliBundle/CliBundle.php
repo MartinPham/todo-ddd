@@ -1,6 +1,6 @@
 <?php
 
-namespace Cli\CliBundle;
+namespace Todo\Cli\CliBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

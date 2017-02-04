@@ -1,8 +1,8 @@
 <?php
 
-namespace Web\FrontendBundle\Controller;
+namespace Todo\Web\FrontendBundle\Controller;
 
-use Application\Task\Query;
+use Todo\Application\Task\Query;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;

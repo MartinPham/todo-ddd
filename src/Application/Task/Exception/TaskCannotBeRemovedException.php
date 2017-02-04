@@ -11,7 +11,7 @@
  * @link     None
  */
 
-namespace Application\Task\Exception;
+namespace Todo\Application\Task\Exception;
 
 /**
  * Class TaskCannotBeRemovedException

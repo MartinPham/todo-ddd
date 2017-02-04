@@ -17,9 +17,9 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Symplify\ActionAutowire\SymplifyActionAutowireBundle(),
 
-            new Web\FrontendBundle\FrontendBundle(),
-            new Web\ApiBundle\ApiBundle(),
-            new Cli\CliBundle\CliBundle(),
+            new Todo\Web\FrontendBundle\FrontendBundle(),
+            new Todo\Web\ApiBundle\ApiBundle(),
+            new Todo\Cli\CliBundle\CliBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

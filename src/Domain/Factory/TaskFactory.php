@@ -1,13 +1,13 @@
 <?php
 
-namespace Domain\Factory;
+namespace Todo\Domain\Factory;
 
-use Domain\Exception\TaskNameIsAlreadyExistedException;
-use Domain\Exception\TaskNameIsEmptyException;
-use Domain\Repository\TaskRepositoryInterface;
-use Domain\Specification\TaskNameIsNotEmptySpecification;
-use Domain\Specification\TaskNameIsUniqueSpecification;
-use Domain\Task;
+use Todo\Domain\Exception\TaskNameIsAlreadyExistedException;
+use Todo\Domain\Exception\TaskNameIsEmptyException;
+use Todo\Domain\Repository\TaskRepositoryInterface;
+use Todo\Domain\Specification\TaskNameIsNotEmptySpecification;
+use Todo\Domain\Specification\TaskNameIsUniqueSpecification;
+use Todo\Domain\Task;
 
 /**
  * Class TaskFactory

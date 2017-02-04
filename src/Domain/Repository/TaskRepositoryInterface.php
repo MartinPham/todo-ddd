@@ -11,10 +11,10 @@
  * @link     None
  */
 
-namespace Domain\Repository;
+namespace Todo\Domain\Repository;
 
-use Domain\Exception\TaskNotFoundException;
-use Domain\Task;
+use Todo\Domain\Exception\TaskNotFoundException;
+use Todo\Domain\Task;
 
 /**
  * Interface TaskRepositoryInterface

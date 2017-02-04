@@ -1,9 +1,9 @@
 <?php
 
-namespace Application\Task;
+namespace Todo\Application\Task;
 
-use Domain\Repository\TaskRepositoryInterface;
-use Domain\Task;
+use Todo\Domain\Repository\TaskRepositoryInterface;
+use Todo\Domain\Task;
 
 /**
  * Class Query

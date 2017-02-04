@@ -9,16 +9,16 @@ services:
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
 
     task.query:
-        class: Application\Task\Query
+        class: Todo\Application\Task\Query
         autowire: true
 
     repository.task_repository:
-        class: Infrastructure\Persistence\DoctrineORM\Repository\TaskRepository
+        class: Todo\Infrastructure\Persistence\DoctrineORM\Repository\TaskRepository
         factory: ['@doctrine.orm.default_entity_manager', getRepository]
-        arguments: ['Domain\Task']
+        arguments: ['Todo\Domain\Task']
 
     command.task:
-        class: Cli\CliBundle\Command\TaskListCommand
+        class: Todo\Cli\CliBundle\Command\TaskListCommand
         autowire: true
         tags:
             - { name: console.command }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\Specification;
+namespace Todo\Domain\Specification;
 
 /**
  * Class TaskNameIsNotEmptySpecification

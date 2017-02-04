@@ -1,13 +1,13 @@
 <?php
 
-namespace Infrastructure\Persistence\DoctrineORM\Repository;
+namespace Todo\Infrastructure\Persistence\DoctrineORM\Repository;
 
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMInvalidArgumentException;
-use Domain\Exception\TaskNotFoundException;
-use Domain\Repository\TaskRepositoryInterface;
-use Domain\Task;
+use Todo\Domain\Exception\TaskNotFoundException;
+use Todo\Domain\Repository\TaskRepositoryInterface;
+use Todo\Domain\Task;
 
 /**
  * Class TaskRepository

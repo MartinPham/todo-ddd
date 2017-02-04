@@ -1,14 +1,14 @@
 <?php
 
-namespace Application\Task;
-use Application\Task\Exception\TaskCannotBeRemovedException;
-use Application\Task\Exception\TaskCannotBeSavedException;
-use Domain\Exception\TaskNameIsAlreadyExistedException;
-use Domain\Exception\TaskNameIsEmptyException;
-use Domain\Exception\TaskNotFoundException;
-use Domain\Factory\TaskFactory;
-use Domain\Repository\TaskRepositoryInterface;
-use Domain\Task;
+namespace Todo\Application\Task;
+use Todo\Application\Task\Exception\TaskCannotBeRemovedException;
+use Todo\Application\Task\Exception\TaskCannotBeSavedException;
+use Todo\Domain\Exception\TaskNameIsAlreadyExistedException;
+use Todo\Domain\Exception\TaskNameIsEmptyException;
+use Todo\Domain\Exception\TaskNotFoundException;
+use Todo\Domain\Factory\TaskFactory;
+use Todo\Domain\Repository\TaskRepositoryInterface;
+use Todo\Domain\Task;
 
 /**
  * Class Command

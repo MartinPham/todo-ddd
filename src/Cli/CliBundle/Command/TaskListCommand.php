@@ -1,9 +1,9 @@
 <?php
 
-namespace Cli\CliBundle\Command;
+namespace Todo\Cli\CliBundle\Command;
 
-use Application\Task\Query;
-use Domain\Task;
+use Todo\Application\Task\Query;
+use Todo\Domain\Task;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Exception\LogicException;
 use Symfony\Component\Console\Input\InputInterface;

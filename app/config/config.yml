@@ -75,7 +75,7 @@ doctrine:
                 mappings:
                     custom_mapping:
                         type: yml
-                        prefix: Domain
+                        prefix: Todo\Domain
                         dir: "%kernel.root_dir%/config/doctrine_orm/"
                         is_bundle: false
 

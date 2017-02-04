@@ -1,6 +1,6 @@
 <?php
 
-namespace Web\FrontendBundle\Controller;
+namespace Todo\Web\FrontendBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
