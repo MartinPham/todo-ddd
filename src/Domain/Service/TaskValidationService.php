@@ -73,7 +73,7 @@ class TaskValidationService
             );
         }
 
-        return false;
+        return true;
     }
 
 }
