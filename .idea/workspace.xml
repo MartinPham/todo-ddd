@@ -24,91 +24,95 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TaskController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Web/FrontendBundle/Controller/TaskController.php">
+      <file leaf-file-name="TaskCompleteCommand.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Cli/CliBundle/Command/TaskCompleteCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="268" column="33" lean-forward="false" selection-start-line="268" selection-start-column="33" selection-end-line="268" selection-end-column="33" />
+            <state relative-caret-position="504">
+              <caret line="52" column="0" lean-forward="false" selection-start-line="28" selection-start-column="4" selection-end-line="52" selection-end-column="0" />
               <folding>
-                <element signature="e#54#102#0#PHP" expanded="true" />
-                <element signature="e#3113#3124#1#PHP" expanded="true" />
-                <element signature="e#4208#4219#1#PHP" expanded="true" />
-                <element signature="e#6530#6541#1#PHP" expanded="true" />
-                <element signature="e#7248#7259#1#PHP" expanded="true" />
-                <element signature="e#7708#7719#1#PHP" expanded="true" />
+                <element signature="e#46#111#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Command.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Application/Task/Command.php">
+      <file leaf-file-name="TaskCreateCommand.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Cli/CliBundle/Command/TaskCreateCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="233" column="48" lean-forward="false" selection-start-line="233" selection-start-column="48" selection-end-line="233" selection-end-column="48" />
+            <state relative-caret-position="1491">
+              <caret line="81" column="7" lean-forward="false" selection-start-line="81" selection-start-column="7" selection-end-line="81" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TaskRepositoryInterface.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Domain/Repository/TaskRepositoryInterface.php">
+      <file leaf-file-name="TaskListCommand.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Cli/CliBundle/Command/TaskListCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="508">
-              <caret line="90" column="20" lean-forward="false" selection-start-line="90" selection-start-column="20" selection-end-line="90" selection-end-column="20" />
+            <state relative-caret-position="1953">
+              <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+              <folding>
+                <element signature="e#46#111#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TaskRedoCommand.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Cli/CliBundle/Command/TaskRedoCommand.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="21" column="39" lean-forward="false" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TaskRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Infrastructure/Persistence/DoctrineORM/Repository/TaskRepository.php">
+      <file leaf-file-name="TaskUpdateCommand.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Cli/CliBundle/Command/TaskUpdateCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="111" column="9" lean-forward="false" selection-start-line="111" selection-start-column="9" selection-end-line="111" selection-end-column="9" />
+            <state relative-caret-position="210">
+              <caret line="21" column="39" lean-forward="false" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="services.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config/services.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="335">
+              <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/FrontendBundle/views/Task/list.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="21" column="16" lean-forward="false" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+            <state relative-caret-position="336">
+              <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
               <folding>
                 <element signature="e#12#28#0#Twig" expanded="true" />
-                <element signature="e#422#439#0#Twig" expanded="true" />
-                <element signature="e#584#595#0#Twig" expanded="true" />
-                <element signature="e#886#903#0#Twig" expanded="true" />
-                <element signature="e#1048#1059#0#Twig" expanded="true" />
-                <element signature="e#1159#1170#0#Twig" expanded="true" />
-                <element signature="e#1214#1224#0#Twig" expanded="true" />
+                <element signature="e#438#451#0#Twig" expanded="true" />
+                <element signature="e#534#545#0#Twig" expanded="true" />
+                <element signature="e#852#861#0#Twig" expanded="true" />
+                <element signature="e#944#955#0#Twig" expanded="true" />
+                <element signature="e#1055#1066#0#Twig" expanded="true" />
+                <element signature="e#1110#1120#0#Twig" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/FrontendBundle/views/Task/create.html.twig">
+      <file leaf-file-name="TaskCleanCommand.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Cli/CliBundle/Command/TaskCleanCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="8" selection-end-column="9" />
+            <state relative-caret-position="524">
+              <caret line="88" column="9" lean-forward="false" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="9" />
               <folding>
-                <element signature="e#12#28#0#Twig" expanded="true" />
-                <element signature="e#204#213#0#Twig" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="update.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/FrontendBundle/views/Task/update.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding>
-                <element signature="e#12#28#0#Twig" expanded="true" />
+                <element signature="e#46#111#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -119,6 +123,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>all(</find>
+      <find>TaskNameIsAlreadyExistedException</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -132,10 +137,8 @@
         <option value="$PROJECT_DIR$/src/Domain/Repository/TaskRepositoryInterface.php" />
         <option value="$PROJECT_DIR$/src/Domain/Specification/TaskNameIsNotEmptySpecification.php" />
         <option value="$PROJECT_DIR$/src/Web/ApiBundle/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/src/Web/ApiBundle/Controller/TaskController.php" />
         <option value="$PROJECT_DIR$/src/Web/FrontendBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/Web/FrontendBundle/Form/CreateTaskForm.php" />
-        <option value="$PROJECT_DIR$/app/config/services.yml" />
         <option value="$PROJECT_DIR$/src/Domain/Task.php" />
         <option value="$PROJECT_DIR$/tests/acceptance/CreatingTask.feature" />
         <option value="$PROJECT_DIR$/web/app_dev.php" />
@@ -147,7 +150,6 @@
         <option value="$PROJECT_DIR$/src/Application/Task/Query.php" />
         <option value="$PROJECT_DIR$/spec/Todo/Domain/Specification/TaskNameIsUniqueSpecificationSpec.php" />
         <option value="$PROJECT_DIR$/src/Domain/Specification/TaskNameIsUniqueSpecification.php" />
-        <option value="$PROJECT_DIR$/src/Cli/CliBundle/Command/TaskListCommand.php" />
         <option value="$PROJECT_DIR$/spec/Todo/Domain/Service/TaskValidationServiceSpec.php" />
         <option value="$PROJECT_DIR$/src/Domain/Service/TaskValidationService.php" />
         <option value="$PROJECT_DIR$/src/Domain/Factory/TaskFactory.php" />
@@ -156,9 +158,17 @@
         <option value="$PROJECT_DIR$/spec/Todo/Application/Task/CommandSpec.php" />
         <option value="$PROJECT_DIR$/app/Resources/FrontendBundle/views/Task/create.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/FrontendBundle/views/Task/update.html.twig" />
-        <option value="$PROJECT_DIR$/src/Web/FrontendBundle/Controller/TaskController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/FrontendBundle/views/Task/list.html.twig" />
         <option value="$PROJECT_DIR$/src/Infrastructure/Persistence/DoctrineORM/Repository/TaskRepository.php" />
+        <option value="$PROJECT_DIR$/src/Web/FrontendBundle/Controller/TaskController.php" />
+        <option value="$PROJECT_DIR$/src/Web/ApiBundle/Controller/TaskController.php" />
+        <option value="$PROJECT_DIR$/src/Cli/CliBundle/Command/TaskCreateCommand.php" />
+        <option value="$PROJECT_DIR$/src/Cli/CliBundle/Command/TaskListCommand.php" />
+        <option value="$PROJECT_DIR$/src/Cli/CliBundle/Command/TaskCompleteCommand.php" />
+        <option value="$PROJECT_DIR$/src/Cli/CliBundle/Command/TaskRedoCommand.php" />
+        <option value="$PROJECT_DIR$/src/Cli/CliBundle/Command/TaskUpdateCommand.php" />
+        <option value="$PROJECT_DIR$/src/Cli/CliBundle/Command/TaskCleanCommand.php" />
+        <option value="$PROJECT_DIR$/app/config/services.yml" />
+        <option value="$PROJECT_DIR$/app/Resources/FrontendBundle/views/Task/list.html.twig" />
       </list>
     </option>
   </component>
@@ -988,6 +998,11 @@
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Cli/CliBundle/Command" />
+    </key>
+  </component>
   <component name="RunManager" selected="PHP Script.AcceptanceTester.php">
     <configuration default="false" name="AcceptanceTester.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/tests/_support/AcceptanceTester.php">
       <method />
@@ -1037,7 +1052,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1569" height="1174" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22093023" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1047,7 +1062,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994455" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32994455" sideWeight="0.49612403" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32994455" sideWeight="0.49612403" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39926064" sideWeight="0.49741602" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1286,14 +1301,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spec/Todo/Application/Task/CommandSpec.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="41">
@@ -1309,24 +1316,6 @@
           <folding>
             <element signature="e#41#89#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Cli/CliBundle/Command/TaskListCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="92" column="38" lean-forward="false" selection-start-line="92" selection-start-column="38" selection-end-line="92" selection-end-column="38" />
-          <folding>
-            <element signature="e#46#111#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Cli/CliBundle/CliBundle.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1372,14 +1361,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Web/ApiBundle/Controller/TaskController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-106">
-          <caret line="13" column="18" lean-forward="false" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/FrontendBundle/views/Task/create.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -1401,30 +1382,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/FrontendBundle/views/Task/list.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="21" column="16" lean-forward="false" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-          <folding>
-            <element signature="e#12#28#0#Twig" expanded="true" />
-            <element signature="e#422#439#0#Twig" expanded="true" />
-            <element signature="e#584#595#0#Twig" expanded="true" />
-            <element signature="e#886#903#0#Twig" expanded="true" />
-            <element signature="e#1048#1059#0#Twig" expanded="true" />
-            <element signature="e#1159#1170#0#Twig" expanded="true" />
-            <element signature="e#1214#1224#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/Task/Command.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="233" column="48" lean-forward="false" selection-start-line="233" selection-start-column="48" selection-end-line="233" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Domain/Repository/TaskRepositoryInterface.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="508">
@@ -1441,17 +1398,146 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Cli/CliBundle/CliBundle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Web/FrontendBundle/Controller/TaskController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="268" column="33" lean-forward="false" selection-start-line="268" selection-start-column="33" selection-end-line="268" selection-end-column="33" />
+        <state relative-caret-position="588">
+          <caret line="160" column="5" lean-forward="false" selection-start-line="116" selection-start-column="4" selection-end-line="160" selection-end-column="5" />
           <folding>
             <element signature="e#54#102#0#PHP" expanded="true" />
             <element signature="e#3113#3124#1#PHP" expanded="true" />
-            <element signature="e#4208#4219#1#PHP" expanded="true" />
-            <element signature="e#6530#6541#1#PHP" expanded="true" />
-            <element signature="e#7248#7259#1#PHP" expanded="true" />
-            <element signature="e#7708#7719#1#PHP" expanded="true" />
+            <element signature="e#3860#3871#1#PHP" expanded="true" />
+            <element signature="e#4392#4403#1#PHP" expanded="true" />
+            <element signature="e#6714#6725#1#PHP" expanded="true" />
+            <element signature="e#7432#7443#1#PHP" expanded="true" />
+            <element signature="e#7892#7903#1#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Web/ApiBundle/Controller/TaskController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding>
+            <element signature="e#49#94#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Application/Task/Command.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="71" column="20" lean-forward="false" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/AppCache.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-568">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Console/Exception/InvalidArgumentException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="16" column="6" lean-forward="false" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Cli/CliBundle/Command/TaskCreateCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1491">
+          <caret line="81" column="7" lean-forward="false" selection-start-line="81" selection-start-column="7" selection-end-line="81" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Cli/CliBundle/Command/TaskListCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1953">
+          <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+          <folding>
+            <element signature="e#46#111#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Cli/CliBundle/Command/TaskRedoCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="21" column="39" lean-forward="false" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Cli/CliBundle/Command/TaskUpdateCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="21" column="39" lean-forward="false" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Cli/CliBundle/Command/TaskCompleteCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="28" selection-start-column="4" selection-end-line="52" selection-end-column="0" />
+          <folding>
+            <element signature="e#46#111#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Cli/CliBundle/Command/TaskCleanCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="88" column="9" lean-forward="false" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="9" />
+          <folding>
+            <element signature="e#46#111#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/FrontendBundle/views/Task/list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="e#12#28#0#Twig" expanded="true" />
+            <element signature="e#438#451#0#Twig" expanded="true" />
+            <element signature="e#534#545#0#Twig" expanded="true" />
+            <element signature="e#852#861#0#Twig" expanded="true" />
+            <element signature="e#944#955#0#Twig" expanded="true" />
+            <element signature="e#1055#1066#0#Twig" expanded="true" />
+            <element signature="e#1110#1120#0#Twig" expanded="true" />
           </folding>
         </state>
       </provider>

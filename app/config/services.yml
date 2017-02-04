@@ -21,8 +21,41 @@ services:
         factory: ['@doctrine.orm.default_entity_manager', getRepository]
         arguments: ['Todo\Domain\Task']
 
-    command.task:
+    command.task.list:
         class: Todo\Cli\CliBundle\Command\TaskListCommand
+        autowire: true
+        tags:
+            - { name: console.command }
+
+    command.task.create:
+        class: Todo\Cli\CliBundle\Command\TaskCreateCommand
+        autowire: true
+        tags:
+            - { name: console.command }
+
+    command.task.complete:
+        class: Todo\Cli\CliBundle\Command\TaskCompleteCommand
+        autowire: true
+        tags:
+            - { name: console.command }
+
+
+    command.task.redo:
+        class: Todo\Cli\CliBundle\Command\TaskRedoCommand
+        autowire: true
+        tags:
+            - { name: console.command }
+
+
+    command.task.update:
+        class: Todo\Cli\CliBundle\Command\TaskUpdateCommand
+        autowire: true
+        tags:
+            - { name: console.command }
+
+
+    command.task.clean:
+        class: Todo\Cli\CliBundle\Command\TaskCleanCommand
         autowire: true
         tags:
             - { name: console.command }

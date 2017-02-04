@@ -115,33 +115,46 @@ class TaskController extends Controller
     }
 
     /**
-     * UpdateStatusAction
+     * CompleteAction
      *
-     * @Route("/{taskId}/updateStatus/{taskStatus}",name="task.updateStatus")
+     * @Route("/{taskId}/complete",name="task.complete")
      * @Method({"GET"})
      *
      * @return mixed
-     * @throws \Exception
+     * @throws TaskCannotBeSavedException
+     * @throws TaskNotFoundException
      */
-    public function updateStatusAction(
+    public function completeAction(
         Command $taskCommand,
-        $taskId,
-        $taskStatus
+        $taskId
     ) {
-        if ($taskStatus === Task::STATUS_COMPLETED) {
-            try {
-                $taskCommand->completeTask($taskId);
-            } catch (TaskCannotBeSavedException $e) {
-                throw $e;
-            }
-        } else if ($taskStatus === Task::STATUS_REMAINING) {
-            try {
-                $taskCommand->redoTask($taskId);
-            } catch (TaskCannotBeSavedException $e) {
-                throw $e;
-            }
-        } else {
-            throw new \Exception('Unknown status');
+        try {
+            $taskCommand->completeTask($taskId);
+        } catch (TaskNotFoundException | TaskCannotBeSavedException $e) {
+            throw $e;
+        }
+
+        return $this->redirectToRoute('task.list');
+    }
+
+    /**
+     * RedoAction
+     *
+     * @Route("/{taskId}/redo",name="task.redo")
+     * @Method({"GET"})
+     *
+     * @return mixed
+     * @throws TaskCannotBeSavedException
+     * @throws TaskNotFoundException
+     */
+    public function redoAction(
+        Command $taskCommand,
+        $taskId
+    ) {
+        try {
+            $taskCommand->redoTask($taskId);
+        } catch (TaskNotFoundException | TaskCannotBeSavedException $e) {
+            throw $e;
         }
 
         return $this->redirectToRoute('task.list');

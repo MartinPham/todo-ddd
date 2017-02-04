@@ -3,7 +3,8 @@
 namespace Todo\Cli\CliBundle\Command;
 
 use Symfony\Component\Console\Exception\InvalidArgumentException;
-use Todo\Application\Task\Query;
+use Todo\Application\Task\Command;
+use Todo\Application\Task\Exception\TaskCannotBeRemovedException;
 use Todo\Domain\Task;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Exception\LogicException;
@@ -11,7 +12,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
- * Class TaskListCommand
+ * Class TaskCleanCommand
  *
  * @category None
  * @package  Todo\Cli\CliBundle\Command
@@ -19,25 +20,25 @@ use Symfony\Component\Console\Output\OutputInterface;
  * @license  None http://
  * @link     None
  */
-class TaskListCommand extends ContainerAwareCommand
+class TaskCleanCommand extends ContainerAwareCommand
 {
     /**
-     * TaskQuery
+     * TaskCommand
      *
-     * @var Query
+     * @var Command
      */
-    protected $taskQuery;
+    protected $taskCommand;
 
     /**
      * TaskListCommand constructor
      *
-     * @param Query $taskQuery Task Query
+     * @param Command $taskCommand Task Command
      *
      * @throws LogicException
      */
-    public function __construct(Query $taskQuery)
+    public function __construct(Command $taskCommand)
     {
-        $this->taskQuery = $taskQuery;
+        $this->taskCommand = $taskCommand;
 
         try {
             parent::__construct();
@@ -45,6 +46,7 @@ class TaskListCommand extends ContainerAwareCommand
             throw $e;
         }
     }
+
 
     /**
      * Configure
@@ -55,7 +57,7 @@ class TaskListCommand extends ContainerAwareCommand
     {
         try {
             $this
-                ->setName('task:list')
+                ->setName('task:clean')
                 ->setDescription('...');
         } catch (InvalidArgumentException $e) {
             // no catch exception
@@ -70,6 +72,7 @@ class TaskListCommand extends ContainerAwareCommand
      *
      * @return void
      * @throws LogicException
+     * @throws TaskCannotBeRemovedException
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
@@ -79,24 +82,14 @@ class TaskListCommand extends ContainerAwareCommand
             // no catch
         }
 
-        $output->writeln('Remaining');
-
-        $remainingTasks = $this->taskQuery->getAllRemainingTasks();
-
-        /** @var Task $task */
-        foreach ($remainingTasks as $task) {
-            $output->writeln($task->getId() . ' - ' . $task->getName() . '');
+        try {
+            $this->taskCommand->cleanAllCompletedTasks();
+        } catch (TaskCannotBeRemovedException $e) {
+            throw $e;
         }
 
-        $output->writeln('');
 
-        $output->writeln('Completed');
-
-        $completedTasks = $this->taskQuery->getAllCompletedTasks();
-
-        foreach ($completedTasks as $task) {
-            $output->writeln($task->getId() . ' - ' . $task->getName());
-        }
+        $output->writeln('Cleaned');
     }
 
 }
