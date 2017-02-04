@@ -2,12 +2,6 @@
 
 {% block body %}
     <ul>
-        {% for message in app.session.flashBag.get('error') %}
-            <li>{{ message }}</li>
-        {% endfor %}
-    </ul>
-
-    <ul>
     {% for task in remaining_tasks %}
         <li>
             {{ task.id }} - {{ task.name }} ({{ task.status }})
