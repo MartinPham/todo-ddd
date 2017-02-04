@@ -1,6 +1,6 @@
 <?php
 
-namespace Todo\Cli\CliBundle\Command;
+namespace Cli\CliBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Exception\InvalidArgumentException;
@@ -19,7 +19,7 @@ use Todo\Domain\Exception\TaskNotFoundException;
  * Class TaskUpdateCommand
  *
  * @category None
- * @package  Todo\Cli\CliBundle\Command
+ * @package  Cli\CliBundle\Command
  * @author   Martin Pham <i@martinpham.com>
  * @license  None http://
  * @link     None

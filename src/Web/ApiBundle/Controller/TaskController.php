@@ -1,6 +1,6 @@
 <?php
 
-namespace Todo\Web\ApiBundle\Controller;
+namespace Web\ApiBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Todo\Application\Task\Command;
@@ -14,13 +14,13 @@ use Todo\Domain\Exception\TaskNameIsAlreadyExistedException;
 use Todo\Domain\Exception\TaskNameIsEmptyException;
 use Todo\Domain\Exception\TaskNotFoundException;
 use Todo\Domain\Task;
-use Todo\Web\FrontendBundle\Form\CreateTaskForm;
+use Web\FrontendBundle\Form\CreateTaskForm;
 
 /**
  * Class TaskController
  *
  * @category None
- * @package  Todo\Web\ApiBundle\Controller
+ * @package  Web\ApiBundle\Controller
  * @author   Martin Pham <i@martinpham.com>
  * @license  None http://
  * @link     None

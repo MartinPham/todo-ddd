@@ -1,6 +1,6 @@
 <?php
 
-namespace Todo\Cli\CliBundle\Command;
+namespace Cli\CliBundle\Command;
 
 use Symfony\Component\Console\Exception\InvalidArgumentException;
 use Todo\Application\Task\Command;
@@ -15,7 +15,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  * Class TaskCleanCommand
  *
  * @category None
- * @package  Todo\Cli\CliBundle\Command
+ * @package  Cli\CliBundle\Command
  * @author   Martin Pham <i@martinpham.com>
  * @license  None http://
  * @link     None

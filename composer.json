@@ -5,7 +5,9 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Todo\\": "src/"
+            "Todo\\": "src/Todo/",
+            "Cli\\": "src/Cli/",
+            "Web\\": "src/Web/"
         },
         "classmap": [
             "app/AppKernel.php",

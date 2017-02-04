@@ -1,6 +1,6 @@
 <?php
 
-namespace Todo\Web\FrontendBundle;
+namespace Web\FrontendBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

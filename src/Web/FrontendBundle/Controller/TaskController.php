@@ -1,6 +1,6 @@
 <?php
 
-namespace Todo\Web\FrontendBundle\Controller;
+namespace Web\FrontendBundle\Controller;
 
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,14 +18,14 @@ use Todo\Domain\Exception\TaskNameIsAlreadyExistedException;
 use Todo\Domain\Exception\TaskNameIsEmptyException;
 use Todo\Domain\Exception\TaskNotFoundException;
 use Todo\Domain\Task;
-use Todo\Web\FrontendBundle\Form\CreateTaskForm;
-use Todo\Web\FrontendBundle\Form\UpdateTaskForm;
+use Web\FrontendBundle\Form\CreateTaskForm;
+use Web\FrontendBundle\Form\UpdateTaskForm;
 
 /**
  * Class TaskController
  *
  * @category None
- * @package  Todo\Web\FrontendBundle\Controller
+ * @package  Web\FrontendBundle\Controller
  * @author   Martin Pham <i@martinpham.com>
  * @license  None http://
  * @link     None

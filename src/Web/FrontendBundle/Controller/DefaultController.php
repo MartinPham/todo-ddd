@@ -1,6 +1,6 @@
 <?php
 
-namespace Todo\Web\FrontendBundle\Controller;
+namespace Web\FrontendBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -11,7 +11,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
  * Class DefaultController
  *
  * @category None
- * @package  Todo\Web\FrontendBundle\Controller
+ * @package  Web\FrontendBundle\Controller
  * @author   Martin Pham <i@martinpham.com>
  * @license  None http://
  * @link     None

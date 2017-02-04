@@ -11,7 +11,7 @@
  * @link     None
  */
 
-namespace Todo\Web\FrontendBundle\Form;
+namespace Web\FrontendBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -23,7 +23,7 @@ use Todo\Domain\Task;
  * Class UpdateTaskForm
  *
  * @category None
- * @package  Todo\Web\FrontendBundle\Form
+ * @package  Web\FrontendBundle\Form
  * @author   Martin Pham <i@martinpham.com>
  * @license  None http://
  * @link     None

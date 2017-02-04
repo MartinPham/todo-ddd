@@ -1,6 +1,6 @@
 <?php
 
-namespace Todo\Web\ApiBundle\Controller;
+namespace Web\ApiBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
  * Class DefaultController
  *
  * @category None
- * @package  Todo\Web\ApiBundle\Controller
+ * @package  Web\ApiBundle\Controller
  * @author   Martin Pham <i@martinpham.com>
  * @license  None http://
  * @link     None

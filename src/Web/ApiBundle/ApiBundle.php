@@ -1,6 +1,6 @@
 <?php
 
-namespace Todo\Web\ApiBundle;
+namespace Web\ApiBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
