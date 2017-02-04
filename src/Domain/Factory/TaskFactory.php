@@ -5,6 +5,7 @@ namespace Todo\Domain\Factory;
 use Todo\Domain\Exception\TaskNameIsAlreadyExistedException;
 use Todo\Domain\Exception\TaskNameIsEmptyException;
 use Todo\Domain\Repository\TaskRepositoryInterface;
+use Todo\Domain\Service\TaskValidationService;
 use Todo\Domain\Specification\TaskNameIsNotEmptySpecification;
 use Todo\Domain\Specification\TaskNameIsUniqueSpecification;
 use Todo\Domain\Task;
@@ -28,14 +29,23 @@ class TaskFactory
     protected $taskRepository;
 
     /**
+     * TaskValidationService
+     *
+     * @var TaskValidationService
+     */
+    protected $taskValidationService;
+
+    /**
      * TaskFactory constructor
      *
      * @param TaskRepositoryInterface $taskRepository
      *
      */
-    public function __construct(TaskRepositoryInterface $taskRepository)
-    {
+    public function __construct(
+        TaskRepositoryInterface $taskRepository
+    ) {
         $this->taskRepository = $taskRepository;
+        $this->taskValidationService = new TaskValidationService($this->taskRepository);
     }
 
 
@@ -52,18 +62,10 @@ class TaskFactory
     {
         $task = new Task();
 
-        $emptyNameValidator = new TaskNameIsNotEmptySpecification();
-        if (!$emptyNameValidator->isSatisfiedBy($name)) {
-            throw new TaskNameIsEmptyException("Task's name should not be empty.");
-        }
-
-        $uniqueNameValidator = new TaskNameIsUniqueSpecification(
-            $this->taskRepository
-        );
-        if (!$uniqueNameValidator->isSatisfiedBy($name)) {
-            throw new TaskNameIsAlreadyExistedException(
-                "Task's name $name is already existed"
-            );
+        try {
+            $this->taskValidationService->validateName($name);
+        } catch (TaskNameIsEmptyException | TaskNameIsAlreadyExistedException $e) {
+            throw $e;
         }
 
         $task->setName($name);

@@ -8,6 +8,7 @@ use Todo\Domain\Exception\TaskNameIsEmptyException;
 use Todo\Domain\Exception\TaskNotFoundException;
 use Todo\Domain\Factory\TaskFactory;
 use Todo\Domain\Repository\TaskRepositoryInterface;
+use Todo\Domain\Service\TaskValidationService;
 use Todo\Domain\Specification\TaskNameIsNotEmptySpecification;
 use Todo\Domain\Specification\TaskNameIsUniqueSpecification;
 use Todo\Domain\Task;
@@ -31,6 +32,13 @@ class Command
     protected $taskRepository;
 
     /**
+     * TaskValidationService
+     *
+     * @var TaskValidationService
+     */
+    protected $taskValidationService;
+
+    /**
      * TaskFactory
      *
      * @var TaskFactory
@@ -41,14 +49,13 @@ class Command
      * Command constructor
      *
      * @param TaskRepositoryInterface $taskRepository Task Repository
-     * @param TaskFactory             $taskFactory    Task Factory
      */
     public function __construct(
-        TaskRepositoryInterface $taskRepository,
-        TaskFactory $taskFactory
+        TaskRepositoryInterface $taskRepository
     ) {
         $this->taskRepository = $taskRepository;
-        $this->taskFactory = $taskFactory;
+        $this->taskFactory = new TaskFactory($this->taskRepository);
+        $this->taskValidationService = new TaskValidationService($this->taskRepository);
     }
 
 
@@ -162,18 +169,10 @@ class Command
         }
 
         if (isset($data['name'])) {
-            $emptyNameValidator = new TaskNameIsNotEmptySpecification();
-            if (!$emptyNameValidator->isSatisfiedBy($data['name'])) {
-                throw new TaskNameIsEmptyException("Task's name should not be empty.");
-            }
-
-            $uniqueNameValidator = new TaskNameIsUniqueSpecification(
-                $this->taskRepository
-            );
-            if (!$uniqueNameValidator->isSatisfiedBy($data['name'], $taskId)) {
-                throw new TaskNameIsAlreadyExistedException(
-                    "Task's name {$data['name']} is already existed"
-                );
+            try {
+                $this->taskValidationService->validateName($data['name'], $taskId);
+            } catch (TaskNameIsEmptyException | TaskNameIsAlreadyExistedException $e) {
+                throw $e;
             }
 
 

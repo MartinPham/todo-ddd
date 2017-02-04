@@ -2,8 +2,8 @@
 
 {% block body %}
     <ul>
-        {% for message in app.session.flashBag.get('error') %}
-            <li>{{ message }}</li>
+        {% for error in errors %}
+            <li>{{ error }}</li>
         {% endfor %}
     </ul>
 

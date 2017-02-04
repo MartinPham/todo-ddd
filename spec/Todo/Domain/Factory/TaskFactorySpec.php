@@ -7,6 +7,7 @@ use Todo\Domain\Exception\TaskNameIsEmptyException;
 use Todo\Domain\Exception\TaskNotFoundException;
 use Todo\Domain\Factory\TaskFactory;
 use Todo\Domain\Repository\TaskRepositoryInterface;
+use Todo\Domain\Service\TaskValidationService;
 use Todo\Domain\Task;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -18,6 +19,7 @@ class TaskFactorySpec extends ObjectBehavior
 
     /** @var  TaskRepositoryInterface */
     protected $taskRepository;
+
 
     function it_is_initializable()
     {
@@ -37,7 +39,8 @@ class TaskFactorySpec extends ObjectBehavior
         $this->taskRepository->findByName($this->nameNotExists)
             ->willThrow(TaskNotFoundException::class);
 
-        $this->beConstructedWith($taskRepository);
+
+        $this->beConstructedWith($this->taskRepository);
     }
 
     function it_can_create_task_from_name()

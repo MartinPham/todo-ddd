@@ -8,6 +8,7 @@ use Todo\Domain\Exception\TaskNameIsEmptyException;
 use Todo\Domain\Exception\TaskNotFoundException;
 use Todo\Domain\Factory\TaskFactory;
 use Todo\Domain\Repository\TaskRepositoryInterface;
+use Todo\Domain\Service\TaskValidationService;
 use Todo\Domain\Task;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -19,6 +20,9 @@ class CommandSpec extends ObjectBehavior
 
     /** @var TaskFactory */
     protected $taskFactory;
+
+    /** @var  TaskValidationService */
+    protected $taskValidationService;
 
     protected $tasks;
 
@@ -46,7 +50,7 @@ class CommandSpec extends ObjectBehavior
         return $task;
     }
 
-    function let(TaskRepositoryInterface $taskRepository, TaskFactory $taskFactory)
+    function let(TaskRepositoryInterface $taskRepository)
     {
         $this->newTask = $this->generate_task('Buying salt');
         $this->newTask->setStatus(Task::STATUS_REMAINING);
@@ -66,23 +70,19 @@ class CommandSpec extends ObjectBehavior
 
 
         $this->taskRepository = $taskRepository;
-        $this->taskFactory = $taskFactory;
 
-        $this->taskFactory->createFromName($this->newTask->getName())
-            ->willReturn($this->newTask);
 
-        $this->taskFactory->createFromName('')
-            ->willThrow(TaskNameIsEmptyException::class);
-
-        $this->taskFactory->createFromName($this->remainingTask->getName())
-            ->willThrow(TaskNameIsAlreadyExistedException::class);
 
         $this->taskRepository->find($this->remainingTask->getId())
             ->willReturn($this->remainingTask);
         $this->taskRepository->find($this->completedTask->getId())
             ->willReturn($this->completedTask);
+        $this->taskRepository->findByName($this->remainingTask->getName())
+            ->willReturn($this->remainingTask);
         $this->taskRepository->findByName($this->completedTask->getName())
             ->willReturn($this->completedTask);
+        $this->taskRepository->findByName('Buying salt')
+            ->willThrow(TaskNotFoundException::class);
         $this->taskRepository->findByName('')
             ->willThrow(TaskNotFoundException::class);
 
@@ -99,7 +99,7 @@ class CommandSpec extends ObjectBehavior
         $this->taskRepository->removeByStatus(Task::STATUS_COMPLETED)
             ->willReturn(true);
 
-        $this->beConstructedWith($this->taskRepository, $this->taskFactory);
+        $this->beConstructedWith($this->taskRepository);
     }
 
     function it_can_add_new_task()

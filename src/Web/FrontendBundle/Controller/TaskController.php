@@ -70,64 +70,47 @@ class TaskController extends Controller
         Session $session,
         Command $taskCommand
     ) {
+        $errors = [];
+
         try {
-            $createTaskForm = $formFactory->create(CreateTaskForm::class);
+            $createTaskForm = $formFactory->create(
+                CreateTaskForm::class,
+                $request->request->all()
+            );
         } catch (InvalidOptionsException $e) {
-            try {
-                $this->addFlash('error', $e->getMessage());
-            } catch (\LogicException $e) {
-                throw $e;
-            }
-            return $this->redirectToRoute('task.create');
+            $errors[] = $e->getMessage();
         }
 
-        $createTaskForm->handleRequest($request);
-        if ($createTaskForm->isSubmitted() && $createTaskForm->isValid()) {
-            try {
-                $name = $createTaskForm->getData()['name'];
-                $this->addFlash('form_name', $name);
-            } catch (\OutOfBoundsException $e) {
+        if (count($errors) === 0) {
+            $createTaskForm->handleRequest($request);
+            if ($createTaskForm->isSubmitted() && $createTaskForm->isValid()) {
                 try {
-                    $this->addFlash('error', $e->getMessage());
-                } catch (\LogicException $e) {
-                    throw $e;
+                    $name = $createTaskForm->getData()['name'];
+                } catch (\OutOfBoundsException $e) {
+                    $errors[] = $e->getMessage();
                 }
-                return $this->redirectToRoute('task.create');
-            }
 
-            try {
-                $taskCommand->addNewTask($name);
-            } catch (TaskNameIsEmptyException | TaskNameIsAlreadyExistedException | TaskCannotBeSavedException $e) {
-                try {
-                    $this->addFlash('error', $e->getMessage());
-                } catch (\LogicException $e) {
-                    throw $e;
+                if (count($errors) === 0) {
+                    try {
+                        $taskCommand->addNewTask($name);
+                    } catch (TaskNameIsEmptyException | TaskNameIsAlreadyExistedException | TaskCannotBeSavedException $e) {
+                        $errors[] = $e->getMessage();
+                    }
+
+                    if (count($errors) === 0) {
+                        return $this->redirectToRoute('task.list');
+                    }
                 }
-                return $this->redirectToRoute('task.create');
-            }
-
-            $session->getFlashBag()->set('form_name', null);
-            return $this->redirectToRoute('task.list');
 
 
-        }
 
-        if (count($formName = $session->getFlashBag()->get('form_name')) > 0) {
-            try {
-                $createTaskForm->get('name')->setData($formName[0]);
-            } catch (\OutOfBoundsException $e) {
-                try {
-                    $this->addFlash('error', $e->getMessage());
-                } catch (\LogicException $e) {
-                    throw $e;
-                }
-                return $this->redirectToRoute('task.create');
             }
         }
 
 
 
         return [
+            'errors' => $errors,
             'create_task_form' => $createTaskForm->createView()
         ];
     }
@@ -150,23 +133,13 @@ class TaskController extends Controller
             try {
                 $taskCommand->completeTask($taskId);
             } catch (TaskCannotBeSavedException $e) {
-                try {
-                    $this->addFlash('error', $e->getMessage());
-                } catch (\LogicException $e) {
-                    throw $e;
-                }
-                return $this->redirectToRoute('task.list');
+                throw $e;
             }
         } else if ($taskStatus === Task::STATUS_REMAINING) {
             try {
                 $taskCommand->redoTask($taskId);
             } catch (TaskCannotBeSavedException $e) {
-                try {
-                    $this->addFlash('error', $e->getMessage());
-                } catch (\LogicException $e) {
-                    throw $e;
-                }
-                return $this->redirectToRoute('task.list');
+                throw $e;
             }
         } else {
             throw new \Exception('Unknown status');
@@ -183,7 +156,6 @@ class TaskController extends Controller
      * @Template()
      *
      * @return array
-     * @throws \LogicException
      */
     public function updateAction(
         FormFactoryInterface $formFactory,
@@ -193,108 +165,65 @@ class TaskController extends Controller
         Command $taskCommand,
         $taskId
     ) {
+        $errors = [];
         try {
             $task = $taskQuery->getTaskById($taskId);
         } catch (TaskNotFoundException $e) {
-            try {
-                $this->addFlash('error', $e->getMessage());
-            } catch (\LogicException $e) {
-                throw $e;
-            }
-            return $this->redirectToRoute('task.update', [ 'taskId' => $taskId ]);
+            $errors[] = $e->getMessage();
         }
 
-
-        try {
-            $updateTaskForm = $formFactory->create(
-                UpdateTaskForm::class,
-                $task
-            );
-        } catch (InvalidOptionsException $e) {
+        if (count($errors) === 0) {
             try {
-                $this->addFlash('error', $e->getMessage());
-            } catch (\LogicException $e) {
-                throw $e;
-            }
-            return $this->redirectToRoute('task.update', [ 'taskId' => $taskId ]);
-        }
-
-        $updateTaskForm->handleRequest($request);
-        if ($updateTaskForm->isSubmitted() && $updateTaskForm->isValid()) {
-            try {
-                /** @var Task $task */
-                $task = $updateTaskForm->getData();
-
-                $name = $task->getName();
-                $status = $task->getStatus();
-
-                $this->addFlash('form_name', $name);
-                $this->addFlash('form_status', $status);
-
-            } catch (\OutOfBoundsException $e) {
-                try {
-                    $this->addFlash('error', $e->getMessage());
-                } catch (\LogicException $e) {
-                    throw $e;
-                }
-                return $this->redirectToRoute('task.update', [ 'taskId' => $taskId ]);
-            } catch (\LogicException $e) {
-                throw $e;
-            }
-
-            try {
-                $taskCommand->editTask(
-                    $taskId,
-                    [
-                        'name' => $name,
-                        'status' => $status,
-                    ]
+                $updateTaskForm = $formFactory->create(
+                    UpdateTaskForm::class,
+                    ($request->get('name') !== null) ? $request->request->all() : $task
                 );
-            } catch (TaskNotFoundException | TaskNameIsEmptyException | TaskNameIsAlreadyExistedException | TaskCannotBeSavedException $e) {
-                try {
-                    $this->addFlash('error', $e->getMessage());
-                } catch (\LogicException $e) {
-                    throw $e;
-                }
-                return $this->redirectToRoute('task.update', [ 'taskId' => $taskId ]);
-            }
-
-            $session->getFlashBag()->set('form_name', null);
-            $session->getFlashBag()->set('form_status', null);
-
-            return $this->redirectToRoute('task.list');
-
-
-        }
-
-        if (count($formName = $session->getFlashBag()->get('form_name')) > 0) {
-            try {
-                $updateTaskForm->get('name')->setData($formName[0]);
-            } catch (\OutOfBoundsException $e) {
-                try {
-                    $this->addFlash('error', $e->getMessage());
-                } catch (\LogicException $e) {
-                    throw $e;
-                }
-                return $this->redirectToRoute('task.update', [ 'taskId' => $taskId ]);
+            } catch (InvalidOptionsException $e) {
+                $errors[] = $e->getMessage();
             }
         }
 
-        if (count($formStatus = $session->getFlashBag()->get('form_status')) > 0) {
-            try {
-                $updateTaskForm->get('status')->setData($formStatus[0]);
-            } catch (\OutOfBoundsException $e) {
+        if (count($errors) === 0) {
+            $updateTaskForm->handleRequest($request);
+            if ($updateTaskForm->isSubmitted() && $updateTaskForm->isValid()) {
                 try {
-                    $this->addFlash('error', $e->getMessage());
-                } catch (\LogicException $e) {
-                    throw $e;
+                    /** @var Task $task */
+                    $task = $updateTaskForm->getData();
+
+                    $name = $task->getName();
+                    $status = $task->getStatus();
+
+                } catch (\OutOfBoundsException | \LogicException $e) {
+                    $errors[] = $e->getMessage();
                 }
-                return $this->redirectToRoute('task.update', [ 'taskId' => $taskId ]);
+
+                if (count($errors) === 0) {
+                    try {
+                        $taskCommand->editTask(
+                            $taskId,
+                            [
+                                'name'   => $name,
+                                'status' => $status,
+                            ]
+                        );
+                    } catch (TaskNotFoundException | TaskNameIsEmptyException | TaskNameIsAlreadyExistedException | TaskCannotBeSavedException $e) {
+                        $errors[] = $e->getMessage();
+
+                    }
+                }
+
+                if (count($errors) === 0) {
+                    return $this->redirectToRoute('task.list');
+                }
+
+
             }
+
         }
 
 
         return [
+            'errors' => $errors,
             'update_task_form' => $updateTaskForm->createView()
         ];
     }
