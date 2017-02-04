@@ -30,7 +30,9 @@ class TaskListCommand extends ContainerAwareCommand
     /**
      * TaskListCommand constructor
      *
-     * @param Query $taskQuery
+     * @param Query $taskQuery Task Query
+     *
+     * @throws LogicException
      */
     public function __construct(Query $taskQuery)
     {
@@ -39,11 +41,15 @@ class TaskListCommand extends ContainerAwareCommand
         try {
             parent::__construct();
         } catch (LogicException $e) {
-
+            throw $e;
         }
     }
 
-
+    /**
+     * Configure
+     *
+     * @return void
+     */
     protected function configure()
     {
         $this
@@ -58,12 +64,14 @@ class TaskListCommand extends ContainerAwareCommand
      * @param OutputInterface $output Output
      *
      * @return void
+     * @throws LogicException
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         try {
             parent::execute($input, $output);
         } catch (LogicException $e) {
+            throw $e;
 
         }
 
