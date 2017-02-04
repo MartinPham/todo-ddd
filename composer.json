@@ -1,0 +1,16 @@
+{
+    "name": "zzz/todo",
+    "description" : "Todo DDD app",
+    "license": "proprietary",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Todo\\": "Todo/"
+        },
+        "classmap": []
+    },
+    "require": {
+        "php": ">=7.1"
+        
+    }
+}

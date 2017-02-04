@@ -1,6 +1,6 @@
 {
-    "name": "zzz/todo",
-    "description" : "Todo DDD app",
+    "name": "zzz/sf-todo",
+    "description" : "Symfony Todo DDD app",
     "license": "proprietary",
     "type": "project",
     "autoload": {
