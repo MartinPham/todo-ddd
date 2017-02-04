@@ -27,14 +27,14 @@
       <file leaf-file-name="TaskController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Web/FrontendBundle/Controller/TaskController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1471">
-              <caret line="173" column="0" lean-forward="false" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+            <state relative-caret-position="314">
+              <caret line="200" column="58" lean-forward="false" selection-start-line="200" selection-start-column="58" selection-end-line="200" selection-end-column="58" />
               <folding>
                 <element signature="e#54#102#0#PHP" expanded="true" />
-                <element signature="e#3139#3150#1#PHP" expanded="true" />
-                <element signature="e#4234#4245#1#PHP" expanded="true" />
-                <element signature="e#6422#6433#1#PHP" expanded="true" />
-                <element signature="e#7140#7151#1#PHP" expanded="true" />
+                <element signature="e#3113#3124#1#PHP" expanded="true" />
+                <element signature="e#4208#4219#1#PHP" expanded="true" />
+                <element signature="e#6530#6541#1#PHP" expanded="true" />
+                <element signature="e#7248#7259#1#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1393,14 +1393,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Web/FrontendBundle/Controller/TaskController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1471">
-          <caret line="173" column="0" lean-forward="false" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+        <state relative-caret-position="314">
+          <caret line="200" column="58" lean-forward="false" selection-start-line="200" selection-start-column="58" selection-end-line="200" selection-end-column="58" />
           <folding>
             <element signature="e#54#102#0#PHP" expanded="true" />
-            <element signature="e#3139#3150#1#PHP" expanded="true" />
-            <element signature="e#4234#4245#1#PHP" expanded="true" />
-            <element signature="e#6422#6433#1#PHP" expanded="true" />
-            <element signature="e#7140#7151#1#PHP" expanded="true" />
+            <element signature="e#3113#3124#1#PHP" expanded="true" />
+            <element signature="e#4208#4219#1#PHP" expanded="true" />
+            <element signature="e#6530#6541#1#PHP" expanded="true" />
+            <element signature="e#7248#7259#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

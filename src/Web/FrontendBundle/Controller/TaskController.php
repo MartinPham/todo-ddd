@@ -67,7 +67,6 @@ class TaskController extends Controller
     public function createAction(
         FormFactoryInterface $formFactory,
         Request $request,
-        Session $session,
         Command $taskCommand
     ) {
         $errors = [];
@@ -160,7 +159,6 @@ class TaskController extends Controller
     public function updateAction(
         FormFactoryInterface $formFactory,
         Request $request,
-        Session $session,
         Query $taskQuery,
         Command $taskCommand,
         $taskId
@@ -172,6 +170,7 @@ class TaskController extends Controller
             $errors[] = $e->getMessage();
         }
 
+        $updateTaskForm = null;
         if (count($errors) === 0) {
             try {
                 $updateTaskForm = $formFactory->create(
@@ -183,9 +182,11 @@ class TaskController extends Controller
             }
         }
 
-        if (count($errors) === 0) {
+        if ($updateTaskForm !== null && count($errors) === 0) {
             $updateTaskForm->handleRequest($request);
             if ($updateTaskForm->isSubmitted() && $updateTaskForm->isValid()) {
+                $name = null;
+                $status = null;
                 try {
                     /** @var Task $task */
                     $task = $updateTaskForm->getData();
@@ -197,7 +198,7 @@ class TaskController extends Controller
                     $errors[] = $e->getMessage();
                 }
 
-                if (count($errors) === 0) {
+                if ($name !== null && $status !== null && count($errors) === 0) {
                     try {
                         $taskCommand->editTask(
                             $taskId,
