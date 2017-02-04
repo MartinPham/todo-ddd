@@ -24,23 +24,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="list.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/FrontendBundle/views/Task/list.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding>
-                <element signature="e#12#28#0#Twig" expanded="true" />
-                <element signature="e#328#345#0#Twig" expanded="true" />
-                <element signature="e#490#501#0#Twig" expanded="true" />
-                <element signature="e#698#715#0#Twig" expanded="true" />
-                <element signature="e#860#871#0#Twig" expanded="true" />
-                <element signature="e#971#982#0#Twig" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="TaskListCommand.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Cli/CliBundle/Command/TaskListCommand.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -94,11 +77,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AcceptanceTester.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AcceptanceTesterActions.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/_support/_generated/AcceptanceTesterActions.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AcceptanceTester.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/_support/AcceptanceTester.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+            <state relative-caret-position="482">
+              <caret line="77" column="5" lean-forward="true" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -134,7 +127,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
@@ -173,7 +166,6 @@
         <option value="$PROJECT_DIR$/app/Resources/FrontendBundle/views/Task/create.html.twig" />
         <option value="$PROJECT_DIR$/src/Domain/Task.php" />
         <option value="$PROJECT_DIR$/app/Resources/FrontendBundle/views/Task/list.html.twig" />
-        <option value="$PROJECT_DIR$/tests/_support/AcceptanceTester.php" />
         <option value="$PROJECT_DIR$/tests/acceptance/CreatingTask.feature" />
         <option value="$PROJECT_DIR$/spec/Todo/Application/Task/CommandSpec.php" />
         <option value="$PROJECT_DIR$/tests/acceptance.suite.yml" />
@@ -182,6 +174,7 @@
         <option value="$PROJECT_DIR$/src/Web/FrontendBundle/Controller/TaskController.php" />
         <option value="$PROJECT_DIR$/web/app_dev.php" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/tests/_support/AcceptanceTester.php" />
       </list>
     </option>
   </component>
@@ -1186,14 +1179,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/_support/_generated/AcceptanceTesterActions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1281">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/acceptance/_bootstrap.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1214,30 +1199,6 @@
             <element signature="e#860#871#0#Twig" expanded="true" />
             <element signature="e#971#982#0#Twig" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/_support/AcceptanceTester.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/acceptance/CreatingTask.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/Todo/Application/Task/CommandSpec.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="81" column="45" lean-forward="false" selection-start-line="81" selection-start-column="45" selection-end-line="81" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1298,6 +1259,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="3" column="178" lean-forward="false" selection-start-line="3" selection-start-column="178" selection-end-line="3" selection-end-column="178" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/Todo/Application/Task/CommandSpec.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="81" column="45" lean-forward="false" selection-start-line="81" selection-start-column="45" selection-end-line="81" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/_support/_generated/AcceptanceTesterActions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/acceptance/CreatingTask.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/_support/AcceptanceTester.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="77" column="5" lean-forward="true" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
           <folding />
         </state>
       </provider>
