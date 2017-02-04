@@ -1,7 +1,10 @@
 todo
 ====
-[![Build Status](https://scrutinizer-ci.com/g/MartinPham/todo-ddd/badges/build.png?b=master)](https://scrutinizer-ci.com/g/MartinPham/todo-ddd/build-status/master)
+
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/MartinPham/todo-ddd/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/MartinPham/todo-ddd/?branch=master)
+
+[![Build Status](https://scrutinizer-ci.com/g/MartinPham/todo-ddd/badges/build.png?b=master)](https://scrutinizer-ci.com/g/MartinPham/todo-ddd/build-status/master)
+
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/0e23630d-1f08-495d-b8f5-d039e76b8bf8/big.png)](https://insight.sensiolabs.com/projects/0e23630d-1f08-495d-b8f5-d039e76b8bf8)
 
 ###Description
