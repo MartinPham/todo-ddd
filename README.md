@@ -30,14 +30,14 @@ Feature: Creating task
 
   Scenario: Create new task
     Given There is no task named "Buying sugar"
-     When I create a new task named "Buying sugar"
-     Then The task "Buying sugar" should be created
-      And The status of task "Buying sugar" should be "remaing"
-      
+    When I create a new task named "Buying sugar"
+    Then The task "Buying sugar" should be created
+    And The status of task "Buying sugar" should be "remaining"
+
   Scenario: Create new task with existed name
-    Given There is a task named "Buying sugar"
-     When I create a new task named "Buying sugar"
-     Then The new task "Buying sugar" should not be created
+    Given There is a task named "Buying salt"
+    When I create a new task named "Buying salt"
+    Then The new task "Buying salt" should not be created
 ```
 
 ```
@@ -47,19 +47,19 @@ Feature: Listing task
   I can see tasks I created
 
   Scenario: Listing remaining and completed task
-    Given There are tasks
-      | name				| status	|
-	  | Buying sugar		| remaining	|
-	  | Buying milk			| remaining	|
-	  | Go back to Italy	| completed	|
-	 When I list tasks
-     Then I should see remaining tasks
-      | name				
-	  | Buying sugar	|
-	  | Buying milk		|
-	  And I should see completed tasks
-      | name				
-	  | Go back to Italy	|
+    Given There are tasks:
+      | name              | status    |
+      | Buying salt       | remaining |
+      | Buying milk       | remaining |
+      | Go to supermarket | completed |
+    When I list tasks
+    Then I should see remaining tasks:
+      | name        |
+      | Buying salt |
+      | Buying milk |
+    And I should see completed tasks:
+      | name              |
+      | Go to supermarket |
 ```
 
 ```
@@ -69,19 +69,19 @@ Feature: Modifying task
   I can edit the task I created
 
   Scenario: Editing task
-    Given There is a task named "Buying sugar" with status "remaining"
-	 When I modify task with name "Buying sugar and salt" and status "completed"
-     Then the task "Buying sugar" should have name "Buying sugar and salt" and status "completed"
+    Given There is a task named "Buying salt" with status "remaining"
+    When I modify task "Buying salt" with name "Buying salt and pepper" and status "completed"
+    Then The task "Buying sugar" should have name "Buying salt and pepper" and status "completed"
 
   Scenario: Complete task status
-    Given There is a task named "Buying sugar" with status "remaining"
-	 When I modify task with status "completed"
-     Then the task "Buying sugar" should have status "completed"
-     
+    Given There is a task named "Buying salt" with status "remaining"
+    When I modify task "Buying salt" with status "completed"
+    Then The task "Buying salt" should have status "completed"
+
   Scenario: Redo task status
-    Given There is a task named "Buying sugar" with status "completed"
-	 When I modify task with status "remaining"
-     Then the task "Buying sugar" should have status "remaining"
+    Given There is a task named "Go to supermarket" with status "completed"
+    When I modify task "Go to supermarket" with status "remaining"
+    Then The task "Go to supermarket" should have status "remaining"
 ```
 
 ```
@@ -91,9 +91,20 @@ Feature: Removing task
   I can remove the task I created
 
   Scenario: Removing task
-    Given There is a task named "Buying sugar" with status "remaining"
-	 When I remove task "Buying sugar"
-     Then the task "Buying sugar" should be deleted
+    Given There is a task named "Buying salt" with status "remaining"
+    When I remove task "Buying salt"
+    Then The task "Buying sugar" should be deleted
+
+  Scenario: Cleanup completed task
+    Given There are tasks:
+      | name              | status    |
+      | Buying salt       | remaining |
+      | Buying milk       | remaining |
+      | Go to supermarket | completed |
+    When I cleanup completed tasks
+    Then The completed tasks should be removed:
+      | name              |
+      | Go to supermarket |
 ```
 
 ###Domain

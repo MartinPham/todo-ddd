@@ -5,22 +5,22 @@
     {% for task in remaining_tasks %}
         <li>
             {{ task.id }} - {{ task.name }} ({{ task.status }})
-            <a href="{{ path('task.update', { taskId: task.id }) }}">[Edit]</a>
+            <a data-edit="{{ task.name }}" href="{{ path('task.update', { taskId: task.id }) }}">[Edit]</a>
             |
-            <a href="{{ path('task.complete', { taskId: task.id }) }}">[Done]</a>
+            <a data-done="{{ task.name }}" href="{{ path('task.complete', { taskId: task.id }) }}">[Done]</a>
             |
-            <a href="{{ path('task.delete', { taskId: task.id }) }}">[X]</a>
+            <a data-remove="{{ task.name }}" href="{{ path('task.delete', { taskId: task.id }) }}">[X]</a>
         </li>
     {% endfor %}
 
     {% for task in completed_tasks %}
         <li>
             {{ task.id }} - {{ task.name }} ({{ task.status }})
-            <a href="{{ path('task.update', { taskId: task.id }) }}">[Edit]</a>
+            <a data-edit="{{ task.name }}" href="{{ path('task.update', { taskId: task.id }) }}">[Edit]</a>
             |
-            <a href="{{ path('task.redo', { taskId: task.id }) }}">[Redo]</a>
+            <a data-redo="{{ task.name }}" href="{{ path('task.redo', { taskId: task.id }) }}">[Redo]</a>
             |
-            <a href="{{ path('task.delete', { taskId: task.id }) }}">[X]</a>
+            <a data-remove="{{ task.name }}" href="{{ path('task.delete', { taskId: task.id }) }}">[X]</a>
         </li>
     {% endfor %}
     </ul>
