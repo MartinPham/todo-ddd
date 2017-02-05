@@ -21,6 +21,8 @@ use Todo\Domain\Task;
 /**
  * Interface TaskRepositoryInterface
  *
+ * Provide access to Task repository
+ *
  * @category None
  * @package  Todo\Domain\Repository
  * @author   Martin Pham <i@martinpham.com>
@@ -30,14 +32,14 @@ use Todo\Domain\Task;
 interface TaskRepositoryInterface
 {
     /**
-     * FindAll
+     * Find all Tasks
      *
      * @return array
      */
     public function findAll(): array;
 
     /**
-     * Find
+     * Find a Task from given ID
      *
      * @param mixed $id Id
      *
@@ -47,7 +49,7 @@ interface TaskRepositoryInterface
     public function find($id): Task;
 
     /**
-     * FindAllByStatus
+     * Find all Tasks from given status
      *
      * @param mixed $status Status
      *
@@ -56,7 +58,7 @@ interface TaskRepositoryInterface
     public function findAllByStatus($status): array;
 
     /**
-     * FindByName
+     * Find a Task from given name
      *
      * @param string $name Name
      *
@@ -66,7 +68,7 @@ interface TaskRepositoryInterface
     public function findByName(string $name): Task;
 
     /**
-     * Save
+     * Save Task object into repository
      *
      * @param Task $task Task
      *
@@ -76,7 +78,7 @@ interface TaskRepositoryInterface
     public function save(Task $task);
 
     /**
-     * Remove
+     * Remove a Task from repository
      *
      * @param Task $task Task
      *
@@ -86,7 +88,7 @@ interface TaskRepositoryInterface
     public function remove(Task $task);
 
     /**
-     * RemoveByStatus
+     * Remove Tasks which have given status
      *
      * @param mixed $status Status
      *

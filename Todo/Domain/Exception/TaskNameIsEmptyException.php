@@ -16,6 +16,8 @@ namespace Todo\Domain\Exception;
 /**
  * Class TaskNameIsEmptyException
  *
+ * An exception triggers when we try to have a task with empty name
+ *
  * @category None
  * @package  Todo\Domain\Exception
  * @author   Martin Pham <i@martinpham.com>

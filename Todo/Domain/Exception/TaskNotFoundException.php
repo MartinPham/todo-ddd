@@ -16,6 +16,9 @@ namespace Todo\Domain\Exception;
 /**
  * Class TaskNotFoundException
  *
+ * An exception triggers when we try to find a Task which is not existed
+ * in Task repository
+ *
  * @category None
  * @package  Todo\Domain\Exception
  * @author   Martin Pham <i@martinpham.com>

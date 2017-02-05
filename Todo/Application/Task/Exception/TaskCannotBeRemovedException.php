@@ -16,6 +16,8 @@ namespace Todo\Application\Task\Exception;
 /**
  * Class TaskCannotBeRemovedException
  *
+ * An exception triggers when Task repository cannot remove Task object
+ *
  * @category None
  * @package  Todo\Application\Task\Exception
  * @author   Martin Pham <i@martinpham.com>

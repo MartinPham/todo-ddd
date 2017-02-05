@@ -9,6 +9,8 @@ use Todo\Domain\Task;
 /**
  * Class Query
  *
+ * Sends query into repository to get Task objects
+ *
  * @category None
  * @package  Todo\Application\Task
  * @author   Martin Pham <i@martinpham.com>
@@ -31,11 +33,12 @@ class Query
      */
     public function __construct(TaskRepositoryInterface $taskRepository)
     {
+        // Inject Task repository
         $this->taskRepository = $taskRepository;
     }
 
     /**
-     * Get All Remaining Tasks
+     * Get tasks with remaining status
      *
      * @return array
      */
@@ -45,7 +48,7 @@ class Query
     }
 
     /**
-     * Get All Completed Tasks
+     * Get tasks with completed status
      *
      * @return array
      */
@@ -55,7 +58,7 @@ class Query
     }
 
     /**
-     * Get Task By Id
+     * Get task object by Id
      *
      * @param string $taskId Task ID
      *

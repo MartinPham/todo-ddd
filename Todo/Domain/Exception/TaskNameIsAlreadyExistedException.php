@@ -16,6 +16,9 @@ namespace Todo\Domain\Exception;
 /**
  * Class TaskNameIsAlreadyExistedException
  *
+ * An exception triggers when we try to have a task with the name
+ * which is already used for another task
+ *
  * @category None
  * @package  Todo\Domain\Exception
  * @author   Martin Pham <i@martinpham.com>

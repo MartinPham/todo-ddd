@@ -5,6 +5,8 @@ namespace Todo\Domain;
 /**
  * Class Task
  *
+ * Task object definition
+ *
  * @category None
  * @package  Todo\Domain
  * @author   Martin Pham <i@martinpham.com>
@@ -13,14 +15,46 @@ namespace Todo\Domain;
  */
 class Task implements \JsonSerializable
 {
-
+    /**
+     * Task's statuses
+     */
     const STATUS_REMAINING = 'remaining';
     const STATUS_COMPLETED = 'completed';
 
+    /**
+     * Id
+     *
+     * @var mixed
+     */
     protected $id;
+
+    /**
+     * Name
+     *
+     * @var string
+     */
     protected $name;
+
+    /**
+     * Status
+     * We want default Task's status is remaining
+     *
+     * @var string
+     */
     protected $status = Task::STATUS_REMAINING;
+
+    /**
+     * Created time
+     *
+     * @var \DateTime
+     */
     protected $createdAt;
+
+    /**
+     * Updated time
+     *
+     * @var \DateTime
+     */
     protected $updatedAt;
 
     /**

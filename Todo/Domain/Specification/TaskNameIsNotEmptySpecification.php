@@ -5,6 +5,8 @@ namespace Todo\Domain\Specification;
 /**
  * Class TaskNameIsNotEmptySpecification
  *
+ * A specification describes that Task's name should not be empty
+ *
  * @category None
  * @package  Todo\Domain\Specification
  * @author   Martin Pham <i@martinpham.com>
@@ -14,7 +16,7 @@ namespace Todo\Domain\Specification;
 class TaskNameIsNotEmptySpecification
 {
     /**
-     * Is Satisfied By
+     * Check given name is empty or not, we want it not empty
      *
      * @param string $name Name
      *

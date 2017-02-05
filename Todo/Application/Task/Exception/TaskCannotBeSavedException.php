@@ -16,6 +16,8 @@ namespace Todo\Application\Task\Exception;
 /**
  * Class TaskCannotBeSavedException
  *
+ * An exception triggers when Task repository cannot save Task object
+ *
  * @category None
  * @package  Todo\Application\Task\Exception
  * @author   Martin Pham <i@martinpham.com>
