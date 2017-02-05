@@ -2,7 +2,7 @@ class_name: AcceptanceTester
 modules:
     enabled:
         - WebDriver:
-            url: 'http://sftodo.local/app_test.php' # put your local url
+            url: 'http://sftodo.dev/app_test.php' # put your local url
             browser: 'firefox'
         - \Helper\Acceptance
         - Db
