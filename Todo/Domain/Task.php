@@ -58,6 +58,16 @@ class Task implements \JsonSerializable
     protected $updatedAt;
 
     /**
+     * @param string $name
+     */
+    public function __construct(string $name)
+    {
+        $this->name = $name;
+        $this->createdAt = new \DateTime();
+        $this->status = self::STATUS_REMAINING;
+    }
+
+    /**
      * Get Id
      *
      * @return mixed
@@ -92,9 +102,10 @@ class Task implements \JsonSerializable
      *
      * @param mixed $name Name
      */
-    public function setName($name)
+    public function changeName($name)
     {
         $this->name = $name;
+        $this->updatedAt = new \DateTime();
     }
 
     /**
@@ -108,16 +119,6 @@ class Task implements \JsonSerializable
     }
 
     /**
-     * Set Status
-     *
-     * @param mixed $status Status
-     */
-    public function setStatus($status)
-    {
-        $this->status = $status;
-    }
-
-    /**
      * Get CreatedAt
      *
      * @return mixed
@@ -126,16 +127,7 @@ class Task implements \JsonSerializable
     {
         return $this->createdAt;
     }
-
-    /**
-     * Set CreatedAt
-     *
-     * @param mixed $createdAt CreatedAt
-     */
-    public function setCreatedAt($createdAt)
-    {
-        $this->createdAt = $createdAt;
-    }
+    
 
     /**
      * Get UpdatedAt
@@ -148,13 +140,12 @@ class Task implements \JsonSerializable
     }
 
     /**
-     * Set UpdatedAt
-     *
-     * @param mixed $updatedAt UpdatedAt
+     * Completes the task
      */
-    public function setUpdatedAt($updatedAt)
+    public function complete()
     {
-        $this->updatedAt = $updatedAt;
+        $this->status = self::STATUS_COMPLETED;
+        $this->updatedAt = new \DateTime();
     }
 
     /**
