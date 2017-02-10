@@ -58,6 +58,16 @@ class Task implements \JsonSerializable
     protected $updatedAt;
 
     /**
+     * @param string $name
+     */
+    public function __construct(string $name)
+    {
+        $this->name = $name;
+        $this->createdAt = new \DateTime();
+        $this->status = self::STATUS_REMAINING;
+    }
+
+    /**
      * Get Id
      *
      * @return mixed
